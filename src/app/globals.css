@@ -63,14 +63,15 @@
   font-size: 1.5rem;
   color: #5e107a;
 }
-.dash-navigation .dash-inner .dash-user {
+.dash-navigation .dash-inner .dash-user a {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
-.dash-navigation .dash-inner .dash-user img {
+.dash-navigation .dash-inner .dash-user a img {
   max-width: 30px;
 }
-.dash-navigation .dash-inner .dash-user p {
+.dash-navigation .dash-inner .dash-user a p {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 500;

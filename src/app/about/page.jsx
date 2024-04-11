@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./aboutSection.module.scss";
 import HeaderSection from "@/app/common/HeaderSection";
+import Navbar from "../common/Navbar";
 // import Matt from "../../../../public/matt.jpg";
 // import Neil from "../../../../public/neil.jpg";
 // import Michael from "../../../../public/Michael_Best.png";
@@ -10,6 +11,7 @@ import HeaderSection from "@/app/common/HeaderSection";
 const HeroSectionAbout = () => {
   return (
     <>
+     <Navbar />
       <HeaderSection
         title="About Us"
         description="We are not just an online escrow service, We are the online escrow service

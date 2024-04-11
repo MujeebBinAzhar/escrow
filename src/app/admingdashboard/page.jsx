@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const page = () => {
   return (
@@ -12,8 +13,11 @@ const page = () => {
           <h1>ESCROW INTERNATIONAL FINANCIAL</h1>
         </div>
         <div className="dash-user">
+          <Link href="/">
           <img src="logout.svg" alt="logout" />
           <p>Logout</p>
+          </Link>
+          
         </div>
       </div>
     </div>

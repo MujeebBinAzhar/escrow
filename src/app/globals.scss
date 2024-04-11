@@ -71,19 +71,24 @@ span{
     }
 
     .dash-user {
-      display: flex;
+      a{
+        display: flex;
       align-items: center;
-      img {
-        max-width: 30px;
+        text-decoration: none;
+        img {
+          max-width: 30px;
+        }
+        p {
+          margin: 0;
+          font-size: 1.1rem;
+          font-weight: 500;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: #5e107a;
+        }
       }
-      p {
-        margin: 0;
-        font-size: 1.1rem;
-        font-weight: 500;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: #5e107a;
-      }
+      
+     
     }
   }
 }

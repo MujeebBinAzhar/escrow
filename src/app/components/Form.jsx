@@ -55,7 +55,7 @@ if(data.username === "" || data.password === ""){
   
 
 
-    if(data.username !==  "lewis clark"){
+    if(data.username !==  "lewisclark"){
       setUserError(true);
       setPassError(false);
       return;
