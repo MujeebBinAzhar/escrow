@@ -1,0 +1,217 @@
+.started-link {
+  padding: 0.7rem 1rem;
+  background-color: #3cb95d;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 0.4rem;
+}
+
+.form {
+  margin-top: 12rem;
+  margin-bottom: 10rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 2rem 4rem;
+}
+@media all and (max-width: 768px) {
+  .form {
+    padding: 2rem 1rem;
+  }
+}
+
+.field-container {
+  margin-bottom: 1rem;
+}
+.field-container label {
+  display: block;
+}
+.field-container label span {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+.field-container input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #848484;
+  border-radius: 0.4rem;
+}
+
+.login-btn {
+  padding: 0.7rem 1rem;
+  background-color: #3cb95d;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 0.4rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  border: 0;
+}
+
+.dash-navigation {
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.dash-navigation .dash-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+.dash-navigation .dash-inner .dash-logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #5e107a;
+}
+.dash-navigation .dash-inner .dash-user {
+  display: flex;
+  align-items: center;
+}
+.dash-navigation .dash-inner .dash-user img {
+  max-width: 30px;
+}
+.dash-navigation .dash-inner .dash-user p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #5e107a;
+}
+
+.dashboard {
+  padding: 5rem 0;
+}
+@media all and (max-width: 768px) {
+  .dashboard {
+    padding: 3rem 0;
+  }
+}
+
+.dash-top-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.dash-top-ul li {
+  flex: 1;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.dash-top-ul li .dash-card {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 230px;
+  align-items: center;
+  border-radius: 0.4rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.dash-top-ul li .dash-card img {
+  max-width: 50px;
+}
+.dash-top-ul li .dash-card .faded {
+  color: #5e107a;
+  text-align: center;
+}
+.dash-top-ul li .dash-card p {
+  text-align: center;
+}
+
+.trans-card {
+  border-radius: 0.4rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 1rem;
+}
+
+.green {
+  color: #008000;
+}
+
+.ard-heading {
+  color: #5e107a;
+}
+
+.purple {
+  color: #5e107a;
+}
+
+.transaction-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.transaction-ul li {
+  margin-top: 1rem;
+  background-color: #f4e2fd;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+}
+
+.transaction {
+  font-size: 0.9rem;
+}
+.transaction .user {
+  display: flex;
+  align-items: center;
+}
+.transaction .user img {
+  max-width: 30px;
+}
+.transaction .user p {
+  font-weight: bold;
+  color: #008000;
+  margin: 0 0.4rem;
+}
+.transaction .user span {
+  background-color: #5e107a;
+  padding: 0.1rem;
+  border-radius: 0.2rem;
+  color: #fff;
+}
+.transaction .details {
+  display: flex;
+  margin-top: 0.5rem;
+  align-items: center;
+}
+.transaction .details p {
+  margin: 0 0.5rem;
+  font-weight: 500;
+}
+.transaction .details p span {
+  color: #008000;
+}
+
+.name-detials {
+  display: flex;
+  flex-wrap: wrap;
+}
+.name-detials p {
+  color: #008000;
+  font-weight: 500;
+  margin-right: 2rem;
+}
+.name-detials p span {
+  color: #000;
+  margin-left: 0.5rem;
+  font-weight: normal;
+}
+
+.black {
+  color: #000 !important;
+}
+
+.top {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.top .top-left {
+  margin-right: 2rem;
+}
+.top .top-left img {
+  max-width: 300px;
+  border-radius: 0.4rem;
+}/*# sourceMappingURL=globals.css.map */

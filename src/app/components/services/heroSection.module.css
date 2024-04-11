@@ -1,0 +1,90 @@
+.container {
+  max-width: 60%;
+  margin: auto;
+}
+@media screen and (max-width: 968px) {
+  .container {
+    max-width: 90%;
+  }
+}
+.container h1 {
+  text-align: center;
+  font-weight: 600;
+}
+.container h3 {
+  font-size: 20px;
+  font-weight: 500;
+  padding-top: 20px;
+}
+.container p {
+  font-size: 16px;
+  padding-right: 50px;
+  margin: 0;
+  padding-bottom: 10px;
+}
+.container a {
+  color: #3cb95d;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+.container .contactPara {
+  font-size: 22px;
+  text-align: center;
+  padding: 20px 0;
+}
+.container .contactPara a {
+  font-size: 20px;
+  text-decoration: none;
+}
+.container button {
+  background-color: #3cb95d;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container .try_out {
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.navList ul {
+  list-style-type: none;
+  display: flex;
+  gap: 40px;
+  margin: 40px 0;
+  padding: 0;
+}
+@media screen and (max-width: 768px) {
+  .navList ul {
+    justify-content: center;
+  }
+}
+.navList ul li a {
+  font-weight: 500;
+  color: #7f8c8d;
+  transition: all 0.4s;
+  cursor: pointer;
+  font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+  .navList ul li a {
+    font-size: 14px;
+  }
+}
+.navList ul li a:hover {
+  color: #08f;
+}
+
+.getStartedHeading {
+  font-size: 28px;
+}
+
+.getStartedPara {
+  font-size: 14px !important;
+}
+.getStartedPara a {
+  font-size: 14px;
+}/*# sourceMappingURL=heroSection.module.css.map */

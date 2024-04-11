@@ -1,0 +1,28 @@
+.headerSection {
+  background-image: url(../../../public/car.jpg);
+  height: 80vh;
+  object-fit: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .headerContent {
+    padding-top: 13rem;
+    h2 {
+      font-weight: 700;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 500;
+    }
+    button {
+      background-color: #3cb95d;
+      border-color: #3cb95d;
+      outline: none;
+      border: none;
+      color: white;
+      padding: 7px 15px;
+      border-radius: 5px;
+    }
+  }
+}

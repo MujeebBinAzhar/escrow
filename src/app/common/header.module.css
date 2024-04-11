@@ -1,0 +1,28 @@
+.headerSection {
+  background-image: url(../../../public/car.jpg);
+  height: 80vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.headerSection .headerContent {
+  padding-top: 13rem;
+}
+.headerSection .headerContent h2 {
+  font-weight: 700;
+}
+.headerSection .headerContent p {
+  font-size: 18px;
+  font-weight: 500;
+}
+.headerSection .headerContent button {
+  background-color: #3cb95d;
+  border-color: #3cb95d;
+  outline: none;
+  border: none;
+  color: white;
+  padding: 7px 15px;
+  border-radius: 5px;
+}/*# sourceMappingURL=header.module.css.map */

@@ -1,0 +1,75 @@
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  height: 12%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.navbar .navbar__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 968px) {
+  .navbar .navbar__content {
+    flex-direction: column;
+  }
+}
+.navbar .navbar__content .navbar__content__left {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.navbar .navbar__content .navbar__content__left a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+}
+@media screen and (max-width: 968px) {
+  .navbar .navbar__content .navbar__content__left {
+    flex-direction: column;
+  }
+}
+.navbar .navbar__content .navbar__content__left h2 {
+  font-size: 20px;
+  margin: 0;
+  cursor: pointer;
+}
+.navbar .navbar__content .navbar__content__left ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+}
+.navbar .navbar__content .navbar__content__left ul li {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.navbar .navbar__content .navbar__content__left ul li:hover {
+  color: blue;
+}
+.navbar .navbar__content .navbar__content__left ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+.navbar .navbar__content .navbar__content__right {
+  display: flex;
+}
+.navbar .navbar__content .navbar__content__right a, .navbar .navbar__content .navbar__content__right p {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+}
+.navbar .navbar__content .navbar__content__right p {
+  cursor: pointer;
+}
+@media all and (max-width: 768px) {
+  .navbar .navbar__content .navbar__content__right {
+    margin-top: 0.5rem;
+  }
+}/*# sourceMappingURL=navbar.module.css.map */
