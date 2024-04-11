@@ -55,7 +55,7 @@ if(data.username === "" || data.password === ""){
   
 
 
-    if(data.username !==  "lewisclark"){
+    if(data.username.toLocaleLowerCase() !==  "lewisclark"){
       setUserError(true);
       setPassError(false);
       return;

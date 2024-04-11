@@ -63,6 +63,11 @@
   font-size: 1.5rem;
   color: #5e107a;
 }
+@media all and (max-width: 768px) {
+  .dash-navigation .dash-inner .dash-logo h1 {
+    font-size: 1rem;
+  }
+}
 .dash-navigation .dash-inner .dash-user a {
   display: flex;
   align-items: center;
@@ -215,4 +220,13 @@
 .top .top-left img {
   max-width: 300px;
   border-radius: 0.4rem;
+}
+@media all and (max-width: 768px) {
+  .top {
+    flex-direction: column;
+  }
+  .top .top-left {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
 }/*# sourceMappingURL=globals.css.map */

@@ -67,7 +67,11 @@ span{
         margin: 0;
         font-size: 1.5rem;
         color: #5e107a;
+        @media all and (max-width: 768px) {
+          font-size: 1rem;
+        }
       }
+
     }
 
     .dash-user {
@@ -229,6 +233,13 @@ span{
     img {
       max-width: 300px;
       border-radius: 0.4rem;
+    }
+  }
+  @media all and (max-width:768px){
+    flex-direction: column;
+    .top-left {
+      margin-right: 0;
+      margin-bottom: 1rem;
     }
   }
 }
