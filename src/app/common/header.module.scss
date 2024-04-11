@@ -1,10 +1,9 @@
 .headerSection {
   background-image: url(../../../public/car.jpg);
-  height: 80vh;
-  object-fit: contain;
-  width: 100%;
+  min-height: 80vh;
+  background-size: cover; 
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right;
 
   .headerContent {
     padding-top: 13rem;
