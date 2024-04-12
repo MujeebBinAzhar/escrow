@@ -1,25 +1,25 @@
 "use client"
 
  
-import React, { useEffect, useState } from 'react';
+ 
 import Countdown from 'react-countdown';
 
 const CountdownTimer = () => {
   const fixedEndingDate = new Date('2024-04-17T00:00:00').getTime();
 
-  const [targetDate, setTargetDate] = useState(() => {
-    const storedTargetDate = localStorage.getItem('targetDate');
-    return storedTargetDate ? parseInt(storedTargetDate, 10) : fixedEndingDate; // Default to fixed ending date if no stored date
-  });
+//   const [targetDate, setTargetDate] = useState(() => {
+//     const storedTargetDate = localStorage.getItem('targetDate');
+//     return storedTargetDate ? parseInt(storedTargetDate, 10) : fixedEndingDate; // Default to fixed ending date if no stored date
+//   });
 
-  useEffect(() => {
-    localStorage.setItem('targetDate', targetDate.toString());
-  }, [targetDate]);
+//   useEffect(() => {
+//     localStorage.setItem('targetDate', targetDate.toString());
+//   }, [targetDate]);
 
   return (
     <div className='timerr'>
       <h6>Payment deadline expires on Wednesday 17th April</h6>
-      <Countdown date={targetDate} />
+      <Countdown date={fixedEndingDate} />
     </div>
   );
 };
