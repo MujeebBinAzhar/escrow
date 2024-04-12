@@ -18,7 +18,7 @@ const CountdownTimer = () => {
 
   return (
     <div className='timerr'>
-      <h6>Payment deadline expires on Wednesday 17th April</h6>
+      <h6>Payment deadline expires on Wednesday 17th April 2024</h6>
       <Countdown date={fixedEndingDate} />
     </div>
   );
