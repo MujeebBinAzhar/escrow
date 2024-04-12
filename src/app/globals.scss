@@ -130,6 +130,7 @@ span{
 
       .faded {
         color: #5e107a;
+        font-size: 0.9rem;
         text-align: center;
       }
 
@@ -241,5 +242,28 @@ span{
       margin-right: 0;
       margin-bottom: 1rem;
     }
+  }
+}
+
+
+.timerr{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  background-color: #f4e2fd;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  align-items: center;
+  h6{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #5e107a;
+    
+    margin: 0;
+    margin-right: 3rem;
+  }
+  span{
+    font-size: 1.3rem;
+    font-weight: bold;
   }
 }

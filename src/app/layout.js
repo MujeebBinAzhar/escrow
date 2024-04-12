@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./common/Navbar";
+ 
 import Footer from "./common/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProtectedRoutes from "./common/ProtectedRounts";

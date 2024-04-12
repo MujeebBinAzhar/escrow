@@ -67,7 +67,7 @@ if(data.username === "" || data.password === ""){
     }
 
      
-    router.push("/admingdashboard");
+    router.push("/admindashboard");
     
   };
 

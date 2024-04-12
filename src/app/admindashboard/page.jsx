@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import CountdownTimer from '../components/CountdownTimer'
 
 const page = () => {
   return (
@@ -34,6 +35,10 @@ const page = () => {
         </div>
       </div>
       <div className="row">
+
+      <CountdownTimer/>
+
+
         <div className="col-lg-8">
           <ul className="dash-top-ul">
             <li>
@@ -77,10 +82,10 @@ const page = () => {
                 <img src="clock.svg" alt />
                 <p>Pending</p>
                 <div className="dash-card-header">
-                  <h3>$8,000</h3>
+                  <h3>$4,999</h3>
                 </div>
                 <div className="dash-card-body">
-                  <p className="faded">Transactions Fees required</p>
+                  <p className="faded">✅ Discount Applied</p>
                 </div>
               </div>
             </li>
@@ -163,6 +168,7 @@ const page = () => {
               </li>
             </ul>
           </div>
+         
         </div>
       </div>
       <div className="row mt-5">
