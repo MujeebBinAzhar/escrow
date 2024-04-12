@@ -225,6 +225,8 @@
 @media all and (max-width: 768px) {
   .top {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   .top .top-left {
     margin-right: 0;
@@ -235,7 +237,7 @@
 .timerr {
   display: flex;
   flex-wrap: wrap;
-  margin: 2rem 0;
+  margin-bottom: 2rem;
   background-color: #f4e2fd;
   padding: 1rem;
   border-radius: 0.4rem;
@@ -251,4 +253,18 @@
 .timerr span {
   font-size: 1.3rem;
   font-weight: bold;
+}
+@media all and (max-width: 768px) {
+  .timerr {
+    margin: 0 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .timerr h6 {
+    margin: 0;
+  }
+  .timerr span {
+    width: 100%;
+    text-align: center;
+  }
 }/*# sourceMappingURL=globals.css.map */
