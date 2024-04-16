@@ -82,7 +82,7 @@ const page = () => {
                 <img src="clock.svg" alt />
                 <p>Pending</p>
                 <div className="dash-card-header">
-                  <h3>$4,999</h3>
+                  <h3>$2,999</h3>
                 </div>
                 <div className="dash-card-body">
                   <p className="faded">✅ Discount Applied</p>
