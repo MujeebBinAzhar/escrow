@@ -95,6 +95,8 @@ const page = () => {
                       </div>
                       <div className="dash-card-body">
                         <p className="faded">Successful Payment </p>
+                        <p>⛔Rejected Payments  $1,999</p>
+                         
                       </div>
                     </div>
                   </li>
