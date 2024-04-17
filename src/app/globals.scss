@@ -281,3 +281,22 @@ span{
     }
   }
 }
+
+.check{
+  width: 22px;
+  display: inline-block;
+  place-items: center;  
+  height: 22px;
+  margin-left: 1rem; margin-left: 1rem;
+  border-radius: 0.3rem;
+  background-color: #1A9066;
+  img{
+    max-width: 20px !important;
+   
+  }
+}
+
+
+.check-two{
+  margin-left: 1.2rem;
+}
