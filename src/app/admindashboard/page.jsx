@@ -66,7 +66,7 @@ const page = () => {
               </div>
             </li>
             <li>
-              <div className="dash-card">
+              <div className="dash-card ">
                 <img src="dollar.svg" alt />
                 <p>Transactions</p>
                 <div className="dash-card-header">
@@ -78,14 +78,14 @@ const page = () => {
               </div>
             </li>
             <li>
-              <div className="dash-card">
+              <div className="dash-card p-1">
                 <img src="clock.svg" alt />
-                <p>Pending</p>
+                <p>$1,999</p>
                 <div className="dash-card-header">
-                  <h3>$1,000</h3>
+                  <p>Successful payments  ✅ $2,000 ✅ $1,000</p>
                 </div>
                 <div className="dash-card-body">
-                  <p className="faded">Outstanding </p>
+                  <p className="faded">⛔ REJECTED PAYMENT $1,999 </p>
                 </div>
               </div>
             </li>
