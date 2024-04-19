@@ -77,13 +77,13 @@ const page = () => {
                     <div className="dash-card p-1">
                       <img src="clock.svg" alt />
                       <p className="mb-1">Outstanding payments </p>
-                      <p className="mb-2">$1,999</p>
+                      <p className="mb-2">$2,00</p>
                       <div className="dash-card-header w-100">
                         
 
                         <p className="faded text-start">Successful Payments: </p>
                         <p className="text-start mb-1">
-                          $2,000
+                          $1,999
                           <span className="check">
                             <img src="check.svg" alt="check" />
                           </span>
@@ -100,7 +100,7 @@ const page = () => {
 
                       <p className="faded text-start">Rejected Payments:  </p>
                    
-                        <p className="text-start">⛔$1,999</p>
+                        <p className="text-start">⛔$2,000</p>
                          
                       </div>
                     </div>
