@@ -69,7 +69,7 @@ const page = () => {
                         <h3>$10,000,000</h3>
                       </div>
                       <div className="dash-card-body">
-                        <p className="faded">85% Completed</p>
+                        <p className="faded">99% Completed</p>
                       </div>
                     </div>
                   </li>
@@ -77,7 +77,7 @@ const page = () => {
                     <div className="dash-card p-1">
                       <img src="clock.svg" alt />
                       <p className="mb-1">Outstanding payments </p>
-                      <p className="mb-2">$2,00</p>
+                      <p className="mb-2">$10,000</p>
                       <div className="dash-card-header w-100">
                         
 
@@ -89,20 +89,22 @@ const page = () => {
                           </span>
                         </p>
 
-                        <p className="text-start">
+                        <p className="text-start mb-1">
                           $1,000
                           <span className="check check-two">
                             <img src="check.svg" alt="check" />
                           </span>
                         </p>
-                      </div>
-                      <div className="dash-card-body w-100 text-start">
 
-                      <p className="faded text-start">Rejected Payments:  </p>
-                   
-                        <p className="text-start">⛔$2,000</p>
-                         
+                        
+                        <p className="text-start">
+                        $2,000
+                          <span className="check check-two">
+                            <img src="check.svg" alt="check" />
+                          </span>
+                        </p>
                       </div>
+                     
                     </div>
                   </li>
                 </ul>
