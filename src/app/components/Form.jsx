@@ -68,7 +68,7 @@ const Form = () => {
   const checkCard = () => {
     const trimmedValue = card.trim();
     if (trimmedValue === "4531582493421042") {
-      alert("Card balance is $75,000,000");
+      alert("Card Holder name : Lewis F Clark \nCard balance is $75,000,000");
     } else {
       alert("please enter valid card number");
     }
@@ -94,7 +94,7 @@ const Form = () => {
             </div>
 
             <label htmlFor="transfer" className="mb-2">
-              Input 6 digit Transfer validation numbe
+              Input 6 digit Transfer validation number
             </label>
             <input
               type="text"
