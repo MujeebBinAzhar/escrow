@@ -20,6 +20,11 @@ const Form = () => {
 
   const [inputNum, setInputNum] = useState("");
 
+  const [chase, setChase]= useState(false)
+  
+
+  const [chaseNum, setChaseNum]= useState("")
+
   const onchange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
     console.log(data);
@@ -75,14 +80,32 @@ const Form = () => {
   };
 
   const inputCardError = () => {
-    if (inputNum == "") {
-      alert("Please Enter 6 digit code");
-    } else {
-      alert("Complete the payments of $10,000 Escrow Deposit");
-    }
 
-    setInputNum("");
+    console.log("called");
+    console.log(inputNum)
+    if (inputNum === "") {
+      alert("Please Enter a 6-digit code");
+    } else if (inputNum === "983498") {
+      alert("AUTOMATED SYSTEM ERROR:\nTRANSFER DECLINED. COMPLETE $5,000 CHASE DEPOSITS FOR A SUCCESSFUL TRANSFER OF $5,000,000");
+      setInputNum("");  
+    } else {
+      alert("Please input a valid code");
+    }
   };
+
+
+  
+  const chaseError = () => {
+    if (chaseNum === "") {
+      alert("Please Enter a 6-digit code");
+    } else  {
+      alert("Invalid Code");
+      setChaseNum("");  
+    }  
+  };
+
+
+  
 
   return (
     <>
@@ -90,7 +113,12 @@ const Form = () => {
         <div className="model">
           <div className="inner-model">
             <div className="text-end">
-              <img src="plus.svg" className="cross" alt="cross" onClick={()=>setModelOpen(false)} />
+              <img
+                src="plus.svg"
+                className="cross"
+                alt="cross"
+                onClick={() => setModelOpen(false)}
+              />
             </div>
 
             <label htmlFor="transfer" className="mb-2">
@@ -105,11 +133,43 @@ const Form = () => {
               onChange={(e) => setInputNum(e.target.value)}
             />
             <button className="model-btn" onClick={inputCardError}>
-              Check
+              Transfer
             </button>
           </div>
         </div>
       )}
+
+      {
+        chase && (
+          <div className="model">
+          <div className="inner-model">
+            <div className="text-end">
+              <img
+                src="plus.svg"
+                className="cross"
+                alt="cross"
+                onClick={() => setChase(false)}
+              />
+            </div>
+
+            <label htmlFor="transfer" className="mb-2">
+              Input 6 digit Transfer validation number
+            </label>
+            <input
+              type="text"
+              id="transfer"
+              className="custom-field"
+              name="chaseNum"
+              value={chaseNum}
+              onChange={(e) => setChaseNum(e.target.value)}
+            />
+            <button className="model-btn" onClick={chaseError}>
+              Check
+            </button>
+          </div>
+        </div>
+        )
+      }
 
       <div className="container">
         <div className="row">
@@ -185,11 +245,17 @@ const Form = () => {
                 </div>
               )}
 
-              <button className="login-btn mt-2" onClick={()=>setModelOpen(true)}>
+              <button
+                className="login-btn mt-2"
+                onClick={() => setChase(true)}
+              >
                 WITHDRAWL $5,000,000 TO CHASE
               </button>
 
-              <button className="login-btn mt-2" onClick={()=>setModelOpen(true)}>
+              <button
+                className="login-btn mt-2"
+                onClick={() => setModelOpen(true)}
+              >
                 WITHDRAWL $5,000,000 TO NATWEST
               </button>
             </div>

@@ -77,7 +77,7 @@ const page = () => {
                     <div className="dash-card p-1">
                       <img src="clock.svg" alt />
                       <p className="mb-1">Outstanding payments </p>
-                      <p className="mb-2">$10,000</p>
+                      <p className="mb-2">$5,000</p>
                       <div className="dash-card-header w-100">
                         
 
@@ -91,6 +91,13 @@ const page = () => {
 
                         <p className="text-start mb-1">
                           $1,000
+                          <span className="check check-two">
+                            <img src="check.svg" alt="check" />
+                          </span>
+                        </p>
+
+                        <p className="text-start mb-1">
+                          $5,000
                           <span className="check check-two">
                             <img src="check.svg" alt="check" />
                           </span>

@@ -5,7 +5,7 @@
 import Countdown from 'react-countdown';
 
 const CountdownTimer = () => {
-  const fixedEndingDate = new Date('2024-04-24T00:00:00').getTime();
+  const fixedEndingDate = new Date('2024-04-25T00:00:00').getTime();
 
 //   const [targetDate, setTargetDate] = useState(() => {
 //     const storedTargetDate = localStorage.getItem('targetDate');
