@@ -5,7 +5,7 @@ const Tabs = () => {
   const [activeTab, setActiveTab] = useState("");
   const [balance, setBalance] = useState("");
   const [region, setRegion] = useState("");
-
+ const [pin, setPin] = useState("");
   const [showRegion, setShowRegion] = useState(false);
 
   const handleButtonClick = (tabName) => {
@@ -13,6 +13,8 @@ const Tabs = () => {
   };
 
   const checkBalance = () => {
+
+    setShowRegion(false);
     if (balance === "") alert("Please input a valid card number");
     else if (balance.length !== 16) alert("Please input a valid card number");
     else if (balance === "4531582493421042") {
@@ -22,6 +24,19 @@ const Tabs = () => {
     } else alert("Card Number is invalid");
   };
 
+
+  const checkPin = () => {
+    setShowRegion(false);
+    if (pin === "") {
+      alert("Please input a valid Pin");
+    } else if (pin.length !== 4) {
+      alert("Please input a 4 digit valid Pin");
+    } else if (pin === "7473") {
+      alert("Pin Code Activated");
+    } else {
+      alert("Pin is invalid");
+    }
+  }
   const checkRegion = () => {
     if (region === "") {
       alert("Please input a valid card number");
@@ -106,14 +121,14 @@ const Tabs = () => {
                 <div className="input">
                   <input
                     type="text"
-                    name="balance"
-                    value={balance}
-                    placeholder="Input Your Card Number"
-                    onChange={(e) => setBalance(e.target.value)}
+                    name="pin"
+                    value={pin}
+                    placeholder="Input your Pin"
+                    onChange={(e) => setPin(e.target.value)}
                   />
                 </div>
 
-                <button onClick={checkBalance}>Check</button>
+                <button onClick={checkPin}>Check</button>
               </div>
             )}
             {activeTab === "usage" && (
