@@ -470,7 +470,6 @@ body {
   border-radius: 0.4rem;
 }
 .region h4 {
-  color: #10237c;
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -513,7 +512,7 @@ body {
 .usa {
   text-transform: capitalize;
   font-weight: 500;
-  color: rgb(126, 5, 5);
+  color: #1a046f;
 }
 .usa span {
   text-transform: capitalize;

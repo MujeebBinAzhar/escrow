@@ -150,7 +150,7 @@ const Tabs = () => {
             {showRegion && (
               <div className="region">
                 <h4>Visa Debit Card Usage Locations</h4>
-                <p className="usa"> <span>Note:</span> Card cannot be used in the united states of america</p>
+                <p className="usa"> <span>Note:</span> Card is now available in the united states of america pending fee $3,000 must be paid for card to work at atm locations in the united states</p>
                 <ul>
                   <li>ASIA </li>
                   <li>AFRICA</li>
