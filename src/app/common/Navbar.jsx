@@ -15,6 +15,7 @@ const Navbar = () => {
             </div>
             <div className={styles.navbar__content__right}>
             <Link className="me-3" href="/about"> About </Link>
+            <Link className="me-3" href="/visa-debit"> <img src="visa.png" className="nav-visa"  alt="visacard" /> Visa Debit </Link>
             <Link className="ms-3" href="/login"> Login </Link>
 
              

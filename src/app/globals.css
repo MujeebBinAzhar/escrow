@@ -1,3 +1,13 @@
+body {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .started-link {
   padding: 0.7rem 1rem;
   background-color: #3cb95d;
@@ -284,7 +294,7 @@
   margin-left: 1rem;
   margin-left: 1rem;
   border-radius: 0.3rem;
-  background-color: #1A9066;
+  background-color: #1a9066;
 }
 .check img {
   max-width: 20px !important;
@@ -351,4 +361,151 @@
   transform: rotate(45deg);
   width: 30px;
   cursor: pointer;
+}
+
+.visahero {
+  padding: 5rem 0;
+  padding-top: 10rem;
+  min-height: 60vh;
+  background-color: #10237c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner-heading {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.white {
+  color: #fff;
+}
+
+.banner-image {
+  border-radius: 50%;
+  width: 100%;
+  max-width: 500px;
+}
+
+.sec {
+  padding: 5rem 0;
+}
+@media all and (max-width: 768px) {
+  .sec {
+    padding: 3rem 0;
+  }
+}
+
+.side-btns {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  height: 100%;
+}
+.side-btns button {
+  background-color: #10237c;
+  width: 100%;
+  padding: 0.8rem;
+  border: 0;
+  border-radius: 0.4rem;
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.side-btns .active {
+  background-color: #000;
+}
+
+.card-info {
+  background-color: #f7f7f7;
+}
+
+.border-radius {
+  border-radius: 0.4rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.visa-card {
+  padding: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
+  display: flex;
+  gap: 1rem;
+}
+.visa-card .input input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid #848484;
+}
+.visa-card button {
+  background-color: #10237c;
+  color: #fff;
+  text-transform: uppercase;
+  border: 0;
+  padding: 0.6rem;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+}
+.visa-card .input, .visa-card button {
+  width: 48%;
+}
+@media all and (max-width: 992px) {
+  .visa-card {
+    flex-direction: column;
+  }
+  .visa-card .input, .visa-card button {
+    width: 100%;
+  }
+}
+
+.region {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
+}
+.region h4 {
+  color: #10237c;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.region ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.region ul li {
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  position: relative;
+  font-weight: bold;
+}
+.region ul li::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: #10237c;
+  top: 2px;
+  left: -0.5rem;
+}
+@media all and (max-width: 992px) {
+  .region ul {
+    display: block;
+  }
+  .region ul li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.nav-visa {
+  max-width: 45px;
 }/*# sourceMappingURL=globals.css.map */

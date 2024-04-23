@@ -3,6 +3,7 @@ import "./globals.css";
  
 import Footer from "./common/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-bootstrap/dist/react-bootstrap.min.js";
 import ProtectedRoutes from "./common/ProtectedRounts";
  
 

@@ -1,7 +1,7 @@
 .navbar {
   background-color: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  height: 12%;
+  height: 10%;
   display: flex;
   align-items: center;
   position: fixed;
@@ -37,6 +37,11 @@
   font-size: 20px;
   margin: 0;
   cursor: pointer;
+}
+@media screen and (max-width: 968px) {
+  .navbar .navbar__content .navbar__content__left h2 {
+    font-size: 16px;
+  }
 }
 .navbar .navbar__content .navbar__content__left ul {
   list-style-type: none;
