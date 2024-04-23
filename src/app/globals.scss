@@ -521,3 +521,15 @@ body {
   max-width: 45px;
  
 }
+
+
+.usa{
+  text-transform: capitalize;
+  font-weight: 500;
+  color: rgb(126, 5, 5);
+  span{
+    text-transform: capitalize;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+}
