@@ -84,7 +84,7 @@ const Form = () => {
       alert("Please Enter a 6-digit code");
     } else if (inputNum === "972382") {
       alert(
-        "Transfer Successfully Done to Natwest  Bank, ⛔.Tax Deduction declined"
+        "Transfer Successfully Done to Natwest  Bank, ⛔.Tax Deduction declined\nPayments of $7,643  For Tax is required"
       );
     
     } else {
