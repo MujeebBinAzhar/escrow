@@ -20,10 +20,9 @@ const Form = () => {
 
   const [inputNum, setInputNum] = useState("");
 
-  const [chase, setChase]= useState(false)
-  
+  const [chase, setChase] = useState(false);
 
-  const [chaseNum, setChaseNum]= useState("")
+  const [chaseNum, setChaseNum] = useState("");
 
   const onchange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -80,32 +79,31 @@ const Form = () => {
   };
 
   const inputCardError = () => {
-
-    console.log("called");
-    console.log(inputNum)
+     
     if (inputNum === "") {
       alert("Please Enter a 6-digit code");
-    } else if (inputNum === "983498") {
-      alert("AUTOMATED SYSTEM ERROR:\nTRANSFER DECLINED. COMPLETE $5,000 CHASE DEPOSITS FOR A SUCCESSFUL TRANSFER OF $5,000,000");
-      setInputNum("");  
+    } else if (inputNum === "972382") {
+      alert(
+        "Transfer Successfully Done to Natwest  Bank, ⛔.Tax Deduction declined"
+      );
+    
     } else {
       alert("Please input a valid code");
     }
+
+    setInputNum("");
   };
 
-
-  
   const chaseError = () => {
-    if (chaseNum === "") {
-      alert("Please Enter a 6-digit code");
-    } else  {
+    if (chaseNum === "948338") {
+      alert(
+        "Transfer Successfully Done to Chase Bank, ⛔.Tax Deduction declined\nPayments of $7,643  For Tax is required"
+      );
+    } else {
       alert("Invalid Code");
-      setChaseNum("");  
-    }  
+      setChaseNum("");
+    }
   };
-
-
-  
 
   return (
     <>
@@ -139,9 +137,8 @@ const Form = () => {
         </div>
       )}
 
-      {
-        chase && (
-          <div className="model">
+      {chase && (
+        <div className="model">
           <div className="inner-model">
             <div className="text-end">
               <img
@@ -168,8 +165,7 @@ const Form = () => {
             </button>
           </div>
         </div>
-        )
-      }
+      )}
 
       <div className="container">
         <div className="row">
@@ -245,10 +241,7 @@ const Form = () => {
                 </div>
               )}
 
-              <button
-                className="login-btn mt-2"
-                onClick={() => setChase(true)}
-              >
+              <button className="login-btn mt-2" onClick={() => setChase(true)}>
                 WITHDRAWL $5,000,000 TO CHASE
               </button>
 

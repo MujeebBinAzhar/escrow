@@ -287,17 +287,17 @@ body {
 }
 
 .check {
-  width: 22px;
-  display: inline-block;
+  width: 18px;
+  display: grid;
   place-items: center;
-  height: 22px;
+  height: 18px;
   margin-left: 1rem;
   margin-left: 1rem;
   border-radius: 0.3rem;
   background-color: #1a9066;
 }
 .check img {
-  max-width: 20px !important;
+  max-width: 16px !important;
 }
 
 .check-two {
@@ -518,4 +518,15 @@ body {
   text-transform: capitalize;
   font-weight: bold;
   margin-top: 1rem;
+}
+
+.payment-para {
+  text-align: start !important;
+  font-size: 0.8rem;
+}
+
+.payment-box {
+  display: flex;
+  justify-content: space-between;
+  max-width: 90px;
 }/*# sourceMappingURL=globals.css.map */

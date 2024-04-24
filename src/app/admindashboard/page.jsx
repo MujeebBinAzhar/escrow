@@ -76,42 +76,82 @@ const page = () => {
                   <li>
                     <div className="dash-card p-1">
                       <img src="clock.svg" alt />
-                      <p className="mb-1">Outstanding payments </p>
-                      <p className="mb-2">$5,000</p>
+
                       <div className="dash-card-header w-100">
-                        
 
-                        <p className="faded text-start">Successful Payments: </p>
-                        <p className="text-start mb-1">
-                          $1,999
-                          <span className="check">
-                            <img src="check.svg" alt="check" />
-                          </span>
+
+                      <p className="faded text-start mt-2 mb-1">
+                      Outstanding Tax Payments
                         </p>
 
-                        <p className="text-start mb-1">
-                          $1,000
-                          <span className="check check-two">
+                        <div className="payment-box ">
+                          <p className="payment-para mb-1">$7,643</p>
+
+                          <div className="check">
                             <img src="check.svg" alt="check" />
-                          </span>
+                          </div>
+                        </div>
+
+
+                        <p className="faded text-start mt-2 mb-1">
+                          Successful Payments:
                         </p>
 
-                        <p className="text-start mb-1">
-                          $5,000
-                          <span className="check check-two">
-                            <img src="check.svg" alt="check" />
-                          </span>
-                        </p>
+                        <div className="payment-box ">
+                          <p className="payment-para mb-1">$1,999</p>
 
-                        
-                        <p className="text-start">
-                        $2,000
-                          <span className="check check-two">
+                          <div className="check">
                             <img src="check.svg" alt="check" />
-                          </span>
-                        </p>
+                          </div>
+                        </div>
+
+                        <div className="payment-box">
+                          <p className="payment-para mb-1">$1,000</p>
+
+                          <div className="check ">
+                            <img src="check.svg" alt="check" />
+                          </div>
+                        </div>
+
+                        <div className="payment-box">
+                          <p className="payment-para mb-1">$5,000</p>
+                          <div className="check">
+                            <img src="check.svg" alt="check" />
+                          </div>
+                        </div>
+
+                        <div className="payment-box">
+                          <p className="payment-para mb-1">$2,000</p>
+
+                          <div className="check">
+                            <img src="check.svg" alt="check" />
+                          </div>
+                        </div>
+
+                        <div className="payment-box">
+                          <p className="payment-para mb-1">$1,000</p>
+
+                          <div className="check ">
+                            <img src="check.svg" alt="check" />
+                          </div>
+                        </div>
+
+                        <div className="payment-box">
+                          <p className="payment-para mb-1">$2,000</p>
+
+                          <div className="check  ">
+                            <img src="check.svg" alt="check" />
+                          </div>
+                        </div>
+
+                        <div className="payment-box">
+                          <p className="payment-para mb-1">$2,000</p>
+
+                          <div className="check">
+                            <img src="check.svg" alt="check" />
+                          </div>
+                        </div>
                       </div>
-                     
                     </div>
                   </li>
                 </ul>
