@@ -563,8 +563,8 @@ body {
   font-size: 0.9rem;
   margin-left: 1rem;
 
-  @media all and (min-width: 768px){
+  @media all and (max-width: 768px){
     margin-left: 0;
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
   }
 }
