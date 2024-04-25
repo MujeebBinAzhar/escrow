@@ -85,12 +85,14 @@ const page = () => {
                         </p>
 
                         <div className="payment-box ">
-                          <p className="payment-para mb-1">$7,643</p>
+                          <p className="payment-para mb-1"> $15,286</p>
 
                           <div className="check">
                             <img src="check.svg" alt="check" />
                           </div>
                         </div>
+
+                       
 
 
                         <p className="faded text-start mt-2 mb-1">
