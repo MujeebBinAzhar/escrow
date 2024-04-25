@@ -1,7 +1,7 @@
 .navbar {
   background-color: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  height: 10%;
+  padding: 0.5rem 0;
   display: flex;
   align-items: center;
   position: fixed;
@@ -63,6 +63,8 @@
 }
 .navbar .navbar__content .navbar__content__right {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .navbar .navbar__content .navbar__content__right a, .navbar .navbar__content .navbar__content__right p {
   text-decoration: none;
@@ -76,5 +78,6 @@
 @media all and (max-width: 768px) {
   .navbar .navbar__content .navbar__content__right {
     margin-top: 0.5rem;
+    justify-content: center;
   }
 }/*# sourceMappingURL=navbar.module.css.map */

@@ -1,7 +1,7 @@
 .navbar {
   background-color: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  height: 10%;
+ padding: 0.5rem 0;
   display: flex;
   align-items: center;
   position: fixed;
@@ -60,6 +60,8 @@
     }
     .navbar__content__right {
       display: flex;
+      align-items: center;
+      flex-wrap: wrap;
       a, p {
         text-decoration: none;
         color: #000;
@@ -73,6 +75,7 @@
 
       @media all and (max-width: 768px){
         margin-top: 0.5rem;
+        justify-content: center;
       }
     }
   }

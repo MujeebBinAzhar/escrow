@@ -534,4 +534,21 @@ body {
   display: flex;
   justify-content: space-between;
   max-width: 90px;
+}
+
+.nav-btn {
+  background-color: #10237c;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  border: 0;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}
+@media all and (min-width: 768px) {
+  .nav-btn {
+    margin-left: 0;
+    margin-top: 0.8rem;
+  }
 }/*# sourceMappingURL=globals.css.map */
