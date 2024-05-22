@@ -23,7 +23,10 @@ const page = () => {
         </section>
         <section className="dashboard">
           <div className="container">
-            <div className="top">
+
+            <div className="row">
+              <div className="col-lg-6">
+              <div className="top">
               <div className="top-left">
                 <img src="lewis.jpeg" className="img-fluid" alt="menu" />
               </div>
@@ -32,6 +35,19 @@ const page = () => {
                 <h3 className="purple mb-5">Welcome Lewis F Clark</h3>
               </div>
             </div>
+              </div>
+              <div className="col-lg-6 d-flex flex-column align-items-center mt-4 mt-lg-0">
+              <img src="sig.jpeg" alt="signature"
+                className="sig-img"
+                
+                />
+
+                <p className="mt-4">
+                  <b> SIGNATURE ACTIVATION REQUIRED TOTAL COST $1,000</b>
+                </p>
+              </div>
+            </div>
+            
             <div className="row">
               <CountdownTimer />
 
