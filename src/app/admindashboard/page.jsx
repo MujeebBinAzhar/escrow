@@ -42,8 +42,8 @@ const page = () => {
                 
                 />
 
-                <p className="mt-4">
-                  <b> SIGNATURE ACTIVATION REQUIRED TOTAL COST $1,000</b>
+                <p className="mt-4 text-center">
+                  <b>SIGNATURE ACTIVATION REQUIRED TOTAL COST $1,000 DEADLINE WEDNESDAY 22, 2024</b>
                 </p>
               </div>
             </div>
