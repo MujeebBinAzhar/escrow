@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./navbar.module.scss";
 import Link from "next/link";
-import NavBtn from "../components/NavBtn";
+ 
 
 const Navbar = () => {
 
@@ -20,7 +20,7 @@ const Navbar = () => {
             <Link className="me-3" href="/about"> About </Link>
             <Link className="me-3" href="/visa-debit"> <img src="visa.png" className="nav-visa"  alt="visacard" /> Visa Debit </Link>
             <Link className="ms-3" href="/login"> Login </Link>
-           <NavBtn/>
+       
 
              
             </div>

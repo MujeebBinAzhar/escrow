@@ -241,16 +241,7 @@ const Form = () => {
                 </div>
               )}
 
-              <button className="login-btn mt-2" onClick={() => setChase(true)}>
-                WITHDRAWL $5,000,000 TO CHASE
-              </button>
-
-              <button
-                className="login-btn mt-2"
-                onClick={() => setModelOpen(true)}
-              >
-                WITHDRAWL $5,000,000 TO NATWEST
-              </button>
+               
             </div>
           </div>
         </div>

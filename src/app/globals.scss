@@ -115,12 +115,13 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
+
   flex-wrap: wrap;
   li {
-   
     margin-right: 1rem;
     margin-bottom: 1rem;
 
+    flex: 1;
     .dash-card {
       padding: 1rem 2rem;
       display: flex;
@@ -354,6 +355,15 @@ body {
   }
 }
 
+.custom-card {
+  padding: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .custom-field {
   width: 100%;
   padding: 0.7rem 1rem;
@@ -418,7 +428,7 @@ body {
     margin-bottom: 1rem;
   }
 
-  .active{
+  .active {
     background-color: #000;
   }
 }
@@ -440,10 +450,8 @@ body {
   display: flex;
   gap: 1rem;
 
- 
-
-  .input{
-    input{
+  .input {
+    input {
       width: 100%;
       padding: 0.6rem;
       border-radius: 0.4rem;
@@ -451,7 +459,7 @@ body {
     }
   }
 
-  button{
+  button {
     background-color: #10237c;
     color: #fff;
     text-transform: uppercase;
@@ -461,46 +469,45 @@ body {
     font-size: 1.1rem;
   }
 
-  .input , button {
+  .input,
+  button {
     width: 48%;
   }
 
   @media all and (max-width: 992px) {
     flex-direction: column;
 
-    .input , button {
+    .input,
+    button {
       width: 100%;
     }
   }
 }
 
-
-.region{
+.region {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 0.4rem;
-  h4{
-    
-  font-size: 1.2rem;
-  font-weight: 500;
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
   }
-  ul{
+  ul {
     padding: 0;
     list-style: none;
     margin: 0;
     display: flex;
     flex-wrap: wrap;
     margin-top: 1rem;
-    li{
+    li {
       margin-right: 1rem;
       margin-left: 0.5rem;
       position: relative;
       font-weight: bold;
-      
 
-      &::after{
-        content: '';
+      &::after {
+        content: "";
         position: absolute;
         width: 2px;
         height: 20px;
@@ -512,48 +519,42 @@ body {
   }
 
   @media all and (max-width: 992px) {
-    ul{
+    ul {
       display: block;
-      li{
+      li {
         margin-bottom: 0.5rem;
       }
     }
   }
 }
 
-
-.nav-visa{
+.nav-visa {
   max-width: 45px;
- 
 }
 
-
-.usa{
+.usa {
   text-transform: capitalize;
   font-weight: 500;
   color: #1a046f;
-  span{
+  span {
     text-transform: capitalize;
     font-weight: bold;
     margin-top: 1rem;
   }
 }
 
-
 .payment-para {
   text-align: start !important;
   font-size: 0.8rem;
 }
 
-
-.payment-box{
+.payment-box {
   display: flex;
   justify-content: space-between;
   max-width: 90px;
 }
 
-
-.nav-btn{
+.nav-btn {
   background-color: #10237c;
   color: #fff;
   padding: 0.5rem 1rem;
@@ -563,15 +564,67 @@ body {
   font-size: 0.9rem;
   margin-left: 1rem;
 
-  @media all and (max-width: 768px){
+  @media all and (max-width: 768px) {
     margin-left: 0;
     margin-top: 0.5rem;
   }
 }
 
-.sig-img{
-width: 100%;
-max-width: 400px;
+.sig-img {
+  width: 100%;
+  max-width: 400px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  
+}
+
+.admin-btn {
+  background-color: #10237c;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border-radius: 0.4rem;
+  border: 0;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  display: block;
+  width: 100%;
+  margin: 0.7rem 0;
+}
+
+.admin-nat-model {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0, 0.8);
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  border-radius: 0.4rem;
+}
+
+.natwest {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 0.4rem;
+  width: 500px;
+  padding: 1rem 0.7rem;
+
+  p {
+    font-size: 1.1rem;
+  }
+  .admin-cross {
+    rotate: 45deg;
+  }
+  h4 {
+    color: #10237c;
+  }
+  @media all and (max-width: 768px) {
+    width: 98%;
+  }
+}
+
+.pendind {
 }
