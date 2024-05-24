@@ -372,6 +372,22 @@ body {
   background-color: transparent;
 }
 
+.dollar{
+  
+  position: relative;
+  .custom-field{
+    padding-left: 1.3rem;
+  }
+
+  &::before{
+    content: "$";
+    position: absolute;
+    left: 0.5rem;
+    top: 28px;
+     
+  }
+}
+
 .cross {
   transform: rotate(45deg);
   width: 30px;

@@ -43,6 +43,13 @@ const AdminPage = () => {
       return;
     }
     setNatwest(false);
+    setNatwestTransfer({
+      firstName: "",
+      lastName: "",
+      accountNumber: "",
+      sortCode: "",
+      amount: "",
+    })
     setPending(true);
   };
 
@@ -94,14 +101,19 @@ const AdminPage = () => {
                   value={natwestTransfer.sortCode}
                   onChange={natwestChange}
                 />
+                <div className="dollar">
                 <input
                   type="number"
-                  className="custom-field mt-3"
+                  className="custom-field  mt-3"
                   placeholder="Enter Amount (Max $5,000,000)"
                   name="amount"
                   value={natwestTransfer.amount}
                   onChange={natwestChange}
                 />
+                </div>
+               
+
+                
                 <button type="submit" className="admin-btn mt-4">
                   Transfer
                 </button>
