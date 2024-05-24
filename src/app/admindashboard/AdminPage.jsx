@@ -49,7 +49,7 @@ const AdminPage = () => {
       accountNumber: "",
       sortCode: "",
       amount: "",
-    })
+    });
     setPending(true);
   };
 
@@ -68,7 +68,9 @@ const AdminPage = () => {
             </div>
 
             <div className="nat-form mt-3">
-              <form onSubmit={natwestSubmitHandler}>
+
+              <h4 className="m-0">You already have done the transaction!</h4>
+              {/* <form onSubmit={natwestSubmitHandler}>
                 <input
                   type="text"
                   className="custom-field mt-3"
@@ -102,48 +104,42 @@ const AdminPage = () => {
                   onChange={natwestChange}
                 />
                 <div className="dollar">
-                <input
-                  type="number"
-                  className="custom-field  mt-3"
-                  placeholder="Enter Amount (Max $5,000,000)"
-                  name="amount"
-                  value={natwestTransfer.amount}
-                  onChange={natwestChange}
-                />
+                  <input
+                    type="number"
+                    className="custom-field  mt-3"
+                    placeholder="Enter Amount (Max $5,000,000)"
+                    name="amount"
+                    value={natwestTransfer.amount}
+                    onChange={natwestChange}
+                  />
                 </div>
-               
 
-                
                 <button type="submit" className="admin-btn mt-4">
                   Transfer
                 </button>
-              </form>
+              </form> */}
             </div>
           </div>
         </div>
       )}
-      {
-        pending &&  <div className="admin-nat-model">
-        <div className="pending-pop-up">
-          
-
-          <div className="natwest">
-          <div className="text-end">
-            <img
-              src="/plus.svg"
-              className="admin-cross"
-              alt=""
-              onClick={() => setPending(false)}
-            />
-          </div>
-            <p>Thanks for transaction</p>
-            <h4>TRANSACTION PENDING</h4>
+      {pending && (
+        <div className="admin-nat-model">
+          <div className="pending-pop-up">
+            <div className="natwest">
+              <div className="text-end">
+                <img
+                  src="/plus.svg"
+                  className="admin-cross"
+                  alt=""
+                  onClick={() => setPending(false)}
+                />
+              </div>
+              <p>Thanks for transaction</p>
+              <h4>TRANSACTION PENDING</h4>
+            </div>
           </div>
         </div>
-      </div>
-      }
-
-      
+      )}
 
       <section className="dash-navigation">
         <div className="container">
@@ -192,7 +188,7 @@ const AdminPage = () => {
                   <p className="mb-1">First Name: LEWIS</p>
                   <p className="mb-1">Last Name: CLARK</p>
                   <p className="mb-1">Country: United States Of America</p>
-                  <p className="mb-1">Account Balance: $10,000,000.00 USD </p>
+                  <p className="mb-1">Account Balance: $0.00 </p>
                 </div>
               </div>
               <div className="col-md-6 mt-4 mt-md-0">
@@ -203,7 +199,12 @@ const AdminPage = () => {
                   >
                     NATWEST TRANSFER
                   </button>
-                  <button className="admin-btn" onClick={() => setNatwest(true)} >CHASE TRANSFER</button>
+                  <button
+                    className="admin-btn"
+                    onClick={() => setNatwest(true)}
+                  >
+                    CHASE TRANSFER
+                  </button>
                 </div>
               </div>
             </div>
