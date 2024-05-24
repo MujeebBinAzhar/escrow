@@ -189,6 +189,14 @@ const AdminPage = () => {
                   <p className="mb-1">Last Name: CLARK</p>
                   <p className="mb-1">Country: United States Of America</p>
                   <p className="mb-1">Account Balance: $0.00 </p>
+                  <p className="mb-1"> <b>Transactions status : Pending 🛑</b> </p>
+                  <p className="mb-1">Cost of Transfer Fee required $2,000</p>
+
+                  <p className="mb-1"> <span className="text-danger">WARNING:</span>  The COT Fee must be paid WITHIN 24 hours of transfer to avoid a Reversal</p>
+
+                  <p className="mb-1"> <b>Your funds will be in your account one hour after the transfer fee is paid</b> </p>
+
+
                 </div>
               </div>
               <div className="col-md-6 mt-4 mt-md-0">
