@@ -5,7 +5,7 @@ const Tabs = () => {
   const [activeTab, setActiveTab] = useState("");
   const [balance, setBalance] = useState("");
   const [region, setRegion] = useState("");
- const [pin, setPin] = useState("");
+  const [pin, setPin] = useState("");
   const [showRegion, setShowRegion] = useState(false);
 
   const handleButtonClick = (tabName) => {
@@ -13,17 +13,19 @@ const Tabs = () => {
   };
 
   const checkBalance = () => {
-
     setShowRegion(false);
     if (balance === "") alert("Please input a valid card number");
     else if (balance.length !== 16) alert("Please input a valid card number");
-    else if (balance === "5444765497644646") {
-      if (activeTab === "balance") alert("Gold card Master card\nEnding with card  ***646\nLewis F Clark\nCard balance  $10,000,000");
+    else if (balance === "4531582493421042") {
+      if (activeTab === "balance") alert("Lewis Clark balance  $800,000,000");
       if (activeTab === "activation") alert("Visa Card Activated");
       if (activeTab === "pin") alert("Pin code Activated");
-    } else alert("Card Number is invalid");
+    } else if (balance === "5444765497644646")
+      alert(
+        "Gold card Master card\nEnding with card  ***646\nLewis F Clark\nCard balance  $10,000,000\nCard Status : Activated"
+      );
+    else alert("Card Number is invalid");
   };
-
 
   const checkPin = () => {
     setShowRegion(false);
@@ -36,7 +38,7 @@ const Tabs = () => {
     } else {
       alert("Pin is invalid");
     }
-  }
+  };
   const checkRegion = () => {
     if (region === "") {
       alert("Please input a valid card number");
@@ -150,15 +152,18 @@ const Tabs = () => {
             {showRegion && (
               <div className="region">
                 <h4>Visa Debit Card Usage Locations</h4>
-                <p className="usa"> <span>Note:</span> Card is now available in the united states of america pending fee $3,000 must be paid for card to work at atm locations in the united states</p>
+                <p className="usa">
+                  {" "}
+                  <span>Note:</span> Card is now available in the united states
+                  of america pending fee $3,000 must be paid for card to work at
+                  atm locations in the united states
+                </p>
                 <ul>
                   <li>ASIA </li>
                   <li>AFRICA</li>
                   <li>EUROPE </li>
                   <li>AUSTRALIA</li>
                 </ul>
-
-               
               </div>
             )}
 
