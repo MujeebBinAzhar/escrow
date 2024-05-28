@@ -17,8 +17,8 @@ const Tabs = () => {
     setShowRegion(false);
     if (balance === "") alert("Please input a valid card number");
     else if (balance.length !== 16) alert("Please input a valid card number");
-    else if (balance === "4531582493421042") {
-      if (activeTab === "balance") alert("Lewis Clark balance  $800,000,000");
+    else if (balance === "5444765497644646") {
+      if (activeTab === "balance") alert("Gold card Master card\nEnding with card  ***646\nLewis F Clark\nCard balance  $10,000,000");
       if (activeTab === "activation") alert("Visa Card Activated");
       if (activeTab === "pin") alert("Pin code Activated");
     } else alert("Card Number is invalid");
