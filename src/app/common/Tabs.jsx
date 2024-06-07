@@ -64,16 +64,31 @@ const Tabs = () => {
       icon: "question",
       color: "#FC0000",
 
-      html: "<strong  >Upgrade Debit Card!</strong>",
+      html: "<strong  >Upgrade Debit card to send up to $500,000 daily</strong>",
     });
   };
+
+
+  const handleWestern = () => {
+    Swal.fire({
+      icon: "question",
+      color: "#FC0000",
+
+      html: "<strong  >Upgrade Debit card to send up to $15,000 daily</strong>",
+    });
+  };
+
+
+
+  
+
 
   const upGradeLimit = () => {
     Swal.fire({
       icon: "question",
     
 
-      html: "<strong  >UPGRADE  DEBIT CARD TO SEND UP TO $10,000 DAILY</strong>",
+      html: "<strong >Upgrade Debit card to send up to $20,000 daily</strong>",
     });
   };
 
@@ -322,7 +337,7 @@ const Tabs = () => {
                       <img src="bank.svg" alt="arrow" />
                     </div>
                   </button>
-                  <button className="transfer-btn" onClick={handleCardToBank}>
+                  <button className="transfer-btn" onClick={handleWestern}>
                     <p className="m-0">
                       Transfer Funds Via western union money Transfer
                     </p>
