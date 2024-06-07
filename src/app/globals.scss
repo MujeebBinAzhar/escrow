@@ -432,7 +432,7 @@ body {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 1rem;
   border-radius: 0.4rem;
-  height: 100%;
+  
   button {
     background-color: #10237c;
     width: 100%;
@@ -496,6 +496,59 @@ body {
     .input,
     button {
       width: 100%;
+    }
+  }
+}
+
+.transer-card{
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 0.6rem;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.transfer-btn{
+  display: block;
+  width: 100%;
+  margin: 0.7rem 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  min-height: 60px;
+  border: 1px solid #b3b3b3;
+  align-items: center;
+  text-align: left;
+  border-radius: 0.5rem;
+  .graphic{
+   display: flex;
+    img{
+      max-width: 28px;
+      margin: 0 0.4rem;
+    }
+    .card-img{
+      max-width: 35px;
+    }
+    .western{
+      max-width: 120px;
+    }
+
+    @media all and (max-width:768px){
+      flex-direction: column;
+      img{
+        max-width: 20px;
+        margin: 0.2rem 0rem;
+      }
+      .card-img{
+        max-width: 22px;
+
+      }
+      .arrow{
+        rotate: 90deg;
+      }
+      .western{
+        max-width: 80px;
+      }
     }
   }
 }
@@ -643,4 +696,30 @@ body {
 }
 
 .pendind {
+}
+.card-model{
+  position: fixed;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .model-inner{
+    background-color: #fff;
+    min-width: 500px;
+    padding: 1rem;
+    border-radius: 0.4rem;
+
+  }
+
+  @media all and (max-width:768px){
+    .model-inner{
+      width: 98%;
+    }
+  }
 }

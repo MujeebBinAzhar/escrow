@@ -31,7 +31,7 @@ const page = () => {
           </div>
         </div>
       </section>
-      <section className="sec card-info">
+      <section className="sec card-info position-relative">
         <div className="container">
           <Tabs/>
           

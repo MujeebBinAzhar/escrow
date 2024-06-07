@@ -1,12 +1,70 @@
 "use client";
 import React, { useState } from "react";
-
+import Swal from "sweetalert2";
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("");
   const [balance, setBalance] = useState("");
   const [region, setRegion] = useState("");
   const [pin, setPin] = useState("");
   const [showRegion, setShowRegion] = useState(false);
+  const [cardToPay, setCardToPay] = useState(false);
+  const [cardToPayData, setCardToPayData] = useState({
+    name: "",
+    card: "",
+    paypall: "",
+    amount: "",
+  });
+
+  const cardToPayChange = (e) => {
+    setCardToPayData({
+      ...cardToPayData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const cardToPaySubmit = () => {
+    if (
+      cardToPayData.name === "" ||
+      cardToPayData.card === "" ||
+      cardToPayData.paypall === "" ||
+      cardToPayData.amount === ""
+    ) {
+      alert("Please fill all the fields");
+      return;
+    }
+
+    if (cardToPayData.amount < 10) {
+      alert("Minimum amount to send is $10");
+      return;
+    }
+
+    if (cardToPayData.card.length !== 16) {
+      alert("Please input a valid card number");
+      return;
+    }
+
+    if (cardToPayData.card === "4531582493421042") {
+      alert("Transaction successful");
+      alert("Payment Sent");
+      setCardToPay(false);
+      setCardToPayData({
+        name: "",
+        card: "",
+        paypall: "",
+        amount: "",
+      });
+      return;
+    }
+  };
+
+  const handleCardToBank = () => {
+    Swal.fire({
+      icon: "question",
+      color: "#FC0000",
+
+      html: "<strong  >Upgrade Debit Card!</strong>",
+    });
+  };
 
   const handleButtonClick = (tabName) => {
     setActiveTab(tabName);
@@ -55,127 +113,248 @@ const Tabs = () => {
   };
 
   return (
-    <div className="row">
-      <div className="col-11 mx-auto">
-        <div className="row">
-          <div className="col-lg-4">
-            <div className="side-btns">
-              <button
-                className={activeTab === "balance" ? "active" : ""}
-                onClick={() => handleButtonClick("balance")}
-              >
-                Check visa debit card balance
-              </button>
-              <button
-                className={activeTab === "activation" ? "active" : ""}
-                onClick={() => handleButtonClick("activation")}
-              >
-                Check visa debit card Activation status
-              </button>
-              <button
-                className={activeTab === "pin" ? "active" : ""}
-                onClick={() => handleButtonClick("pin")}
-              >
-                Check visa debit card pin code status
-              </button>
-              <button
-                className={activeTab === "usage" ? "active" : ""}
-                onClick={() => handleButtonClick("usage")}
-              >
-                Check Visa Debit card usage location
-              </button>
+    <>
+      {cardToPay && (
+        <div className="card-model">
+          <div className="model-inner">
+            <div className="text-end">
+              <img
+                src="plus.svg"
+                className="cross"
+                onClick={() => setCardToPay(false)}
+                alt=""
+              />
+            </div>
+
+            <div className="cardpay-form">
+              <div className="field-container">
+                <label htmlFor="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  className="custom-field"
+                  name="name"
+                  value={cardToPayData.name}
+                  onChange={cardToPayChange}
+                />
+              </div>
+
+              <div className="field-container">
+                <label htmlFor="card">Enter 16 Digit of your Visa Card</label>
+                <input
+                  type="text"
+                  id="card"
+                  className="custom-field"
+                  name="card"
+                  value={cardToPayData.card}
+                  onChange={cardToPayChange}
+                />
+              </div>
+
+              <div className="field-container">
+                <label htmlFor="paypall">Beneficiary PayPal ID</label>
+                <input
+                  type="text"
+                  id="paypall"
+                  className="custom-field"
+                  name="paypall"
+                  value={cardToPayData.paypall}
+                  onChange={cardToPayChange}
+                />
+              </div>
+
+              <div className="field-container">
+                <label htmlFor="amount">Amount to send</label>
+                <input
+                  type="number"
+                  id="amount"
+                  className="custom-field"
+                  placeholder="Min $10"
+                  name="amount"
+                  value={cardToPayData.amount}
+                  onChange={cardToPayChange}
+                />
+              </div>
+
+              <div className="side-btns p-0 mt-4">
+                <button
+                  className="btn btn-primary w-100"
+                  onClick={cardToPaySubmit}
+                >
+                  Send
+                </button>
+              </div>
             </div>
           </div>
+        </div>
+      )}
+      <div className="row">
+        <div className="col-11 mx-auto">
+          <div className="row">
+            <div className="col-lg-4">
+              <div className="side-btns">
+                <button
+                  className={activeTab === "balance" ? "active" : ""}
+                  onClick={() => handleButtonClick("balance")}
+                >
+                  Check visa debit card balance
+                </button>
+                <button
+                  className={activeTab === "activation" ? "active" : ""}
+                  onClick={() => handleButtonClick("activation")}
+                >
+                  Check visa debit card Activation status
+                </button>
+                <button
+                  className={activeTab === "pin" ? "active" : ""}
+                  onClick={() => handleButtonClick("pin")}
+                >
+                  Check visa debit card pin code status
+                </button>
+                <button
+                  className={activeTab === "usage" ? "active" : ""}
+                  onClick={() => handleButtonClick("usage")}
+                >
+                  Check Visa Debit card usage location
+                </button>
 
-          <div className="col-lg-8 mt-3 mt-lg-0">
-            {activeTab === "balance" && (
-              <div className="visa-card">
-                <div className="input">
-                  <input
-                    type="text"
-                    name="balance"
-                    value={balance}
-                    placeholder="Input Your Card Number"
-                    onChange={(e) => setBalance(e.target.value)}
-                  />
+                <button
+                  className={activeTab === "transfer" ? "active" : ""}
+                  onClick={() => handleButtonClick("transfer")}
+                >
+                  Transfer Funds via Debit Card
+                </button>
+              </div>
+            </div>
+
+            <div className="col-lg-8 mt-3 mt-lg-0">
+              {activeTab === "balance" && (
+                <div className="visa-card">
+                  <div className="input">
+                    <input
+                      type="text"
+                      name="balance"
+                      value={balance}
+                      placeholder="Input Your Card Number"
+                      onChange={(e) => setBalance(e.target.value)}
+                    />
+                  </div>
+
+                  <button onClick={checkBalance}>Check</button>
                 </div>
+              )}
+              {activeTab === "activation" && (
+                <div className="visa-card">
+                  <div className="input">
+                    <input
+                      type="text"
+                      name="balance"
+                      value={balance}
+                      placeholder="Input Your Card Number"
+                      onChange={(e) => setBalance(e.target.value)}
+                    />
+                  </div>
 
-                <button onClick={checkBalance}>Check</button>
-              </div>
-            )}
-            {activeTab === "activation" && (
-              <div className="visa-card">
-                <div className="input">
-                  <input
-                    type="text"
-                    name="balance"
-                    value={balance}
-                    placeholder="Input Your Card Number"
-                    onChange={(e) => setBalance(e.target.value)}
-                  />
+                  <button onClick={checkBalance}>Check</button>
                 </div>
+              )}
+              {activeTab === "pin" && (
+                <div className="visa-card">
+                  <div className="input">
+                    <input
+                      type="text"
+                      name="pin"
+                      value={pin}
+                      placeholder="Input your Pin"
+                      onChange={(e) => setPin(e.target.value)}
+                    />
+                  </div>
 
-                <button onClick={checkBalance}>Check</button>
-              </div>
-            )}
-            {activeTab === "pin" && (
-              <div className="visa-card">
-                <div className="input">
-                  <input
-                    type="text"
-                    name="pin"
-                    value={pin}
-                    placeholder="Input your Pin"
-                    onChange={(e) => setPin(e.target.value)}
-                  />
+                  <button onClick={checkPin}>Check</button>
                 </div>
+              )}
+              {activeTab === "usage" && (
+                <div className="visa-card">
+                  <div className="input">
+                    <input
+                      type="text"
+                      name="region"
+                      value={region}
+                      placeholder="Input Your Card Number"
+                      onChange={(e) => setRegion(e.target.value)}
+                    />
+                  </div>
 
-                <button onClick={checkPin}>Check</button>
-              </div>
-            )}
-            {activeTab === "usage" && (
-              <div className="visa-card">
-                <div className="input">
-                  <input
-                    type="text"
-                    name="region"
-                    value={region}
-                    placeholder="Input Your Card Number"
-                    onChange={(e) => setRegion(e.target.value)}
-                  />
+                  <button onClick={checkRegion}>Check</button>
                 </div>
+              )}
 
-                <button onClick={checkRegion}>Check</button>
-              </div>
-            )}
+              {activeTab === "transfer" && (
+                <div className="transer-card">
+                  <button
+                    className="transfer-btn"
+                    onClick={() => setCardToPay(true)}
+                  >
+                    <p className="m-0">Transfer Funds From Card To Paypal</p>
+                    <div className="graphic">
+                      <img src="card.svg" className="card-img" alt="arrow" />
+                      <img src="arrow.svg" className="arrow" alt="arrow" />
+                      <img src="paypall.svg" alt="paypal" />
+                    </div>
+                  </button>
+                  <button className="transfer-btn" onClick={handleCardToBank}>
+                    <p className="m-0">Transfer Funds From Card To Bank</p>
 
-            {showRegion && (
-              <div className="region">
-                <h4>Visa Debit Card Usage Locations</h4>
-                <p className="usa">
-                  {" "}
-                  <span>Note:</span> Card is now available in the united states
-                  of america pending fee $3,000 must be paid for card to work at
-                  atm locations in the united states
-                </p>
-                <ul>
-                  <li>ASIA </li>
-                  <li>AFRICA</li>
-                  <li>EUROPE </li>
-                  <li>AUSTRALIA</li>
-                </ul>
-              </div>
-            )}
+                    <div className="graphic">
+                      <img className="card-img" src="card.svg" alt="paypal" />
+                      <img src="arrow.svg" className="arrow" alt="arrow" />
+                      <img src="bank.svg" alt="arrow" />
+                    </div>
+                  </button>
+                  <button className="transfer-btn" onClick={handleCardToBank}>
+                    <p className="m-0">
+                      Transfer Funds Via western union money Transfer
+                    </p>
 
-            <img
-              src="world-card.jpg"
-              alt="credit-card"
-              className="img-fluid border-radius"
-            />
+                    <div className="graphic">
+                      <img
+                        src="western.png"
+                        className="western"
+                        alt="western"
+                      />
+                    </div>
+                  </button>
+                </div>
+              )}
+
+              {showRegion && (
+                <div className="region">
+                  <h4>Visa Debit Card Usage Locations</h4>
+                  <p className="usa">
+                    {" "}
+                    <span>Note:</span> Card is now available in the united
+                    states of america pending fee $3,000 must be paid for card
+                    to work at atm locations in the united states
+                  </p>
+                  <ul>
+                    <li>ASIA </li>
+                    <li>AFRICA</li>
+                    <li>EUROPE </li>
+                    <li>AUSTRALIA</li>
+                  </ul>
+                </div>
+              )}
+
+              <img
+                src="world-card.jpg"
+                alt="credit-card"
+                className="img-fluid border-radius"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
