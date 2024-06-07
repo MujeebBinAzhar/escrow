@@ -44,15 +44,17 @@ const Tabs = () => {
     }
 
     if (cardToPayData.card === "4531582493421042") {
-      alert("Transaction successful");
-      alert("Payment Sent");
       setCardToPay(false);
+      alert("Transaction successful");
+    
+     
       setCardToPayData({
         name: "",
         card: "",
         paypall: "",
         amount: "",
       });
+      upGradeLimit();
       return;
     }
   };
@@ -63,6 +65,15 @@ const Tabs = () => {
       color: "#FC0000",
 
       html: "<strong  >Upgrade Debit Card!</strong>",
+    });
+  };
+
+  const upGradeLimit = () => {
+    Swal.fire({
+      icon: "question",
+    
+
+      html: "<strong  >UPGRADE  DEBIT CARD TO SEND UP TO $10,000 DAILY</strong>",
     });
   };
 
