@@ -719,7 +719,20 @@ body {
 
   @media all and (max-width:768px){
     .model-inner{
-      width: 98%;
+     min-width: 98%;
+     height: 95vh;
+     overflow-y: scroll;
+    }
+  }
+}
+.cardpay-form{
+  @media all and (max-width:768px){
+    
+  }
+  .field-container{
+    margin-bottom: 0.8rem;
+    input{
+      padding: 0.3rem 1rem;
     }
   }
 }

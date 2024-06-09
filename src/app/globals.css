@@ -707,6 +707,15 @@ body {
 }
 @media all and (max-width: 768px) {
   .card-model .model-inner {
-    width: 98%;
+    min-width: 98%;
+    height: 95vh;
+    overflow-y: scroll;
   }
+}
+
+.cardpay-form .field-container {
+  margin-bottom: 0.8rem;
+}
+.cardpay-form .field-container input {
+  padding: 0.3rem 1rem;
 }/*# sourceMappingURL=globals.css.map */

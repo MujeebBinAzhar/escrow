@@ -15,6 +15,22 @@ const Tabs = () => {
     amount: "",
   });
 
+  const [cardToBank, setCardToBank] = useState(false);
+
+  const [cardToBankData, setCardToBankData] = useState({
+    cardnumber: "",
+    cardcvv: "",
+    cardpin: "",
+    firstname: "",
+    lastname: "",
+    accnumber: "",
+    amount: "",
+    sortcode: "",
+    swiftcode: "",
+    bankname: "",
+    country: "",
+  });
+
   const cardToPayChange = (e) => {
     setCardToPayData({
       ...cardToPayData,
@@ -46,8 +62,7 @@ const Tabs = () => {
     if (cardToPayData.card === "4531582493421042") {
       setCardToPay(false);
       alert("Transaction successful");
-    
-     
+
       setCardToPayData({
         name: "",
         card: "",
@@ -64,10 +79,58 @@ const Tabs = () => {
       icon: "question",
       color: "#FC0000",
 
-      html: "<strong  >Upgrade Debit card to send up to $500,000 daily</strong>",
+      html: '<input type="text"  class="custom-field"  placeholder="ENTER 9 DIGIT TRANSFER CODE" /> <p>  <b>ENTER 9 DIGIT TRANSFER CODE</b>    </p>',
     });
   };
+  const cardToBankSubmit = () => {
+    if (
+      cardToBankData.cardnumber === "" ||
+      cardToBankData.cardcvv === "" ||
+      cardToBankData.cardpin === "" ||
+      cardToBankData.firstname === "" ||
+      cardToBankData.lastname === "" ||
+      cardToBankData.accnumber === "" ||
+      cardToBankData.amount === "" ||
+      cardToBankData.sortcode === "" ||
+      cardToBankData.swiftcode === "" ||
+      cardToBankData.bankname === "" ||
+      cardToBankData.country === ""
+    ) {
+      alert("Please fill all the fields");
+      return;
+    }
 
+   
+
+    if (cardToBankData.cardnumber.length !== 16) {
+      alert("Please input a valid card number");
+      return;
+    }
+
+    if (cardToBankData.cardnumber === "4531582493421042") {
+      alert("Transaction successful");
+
+      setCardToBankData({
+        cardnumber: "",
+        cardcvv: "",
+        cardpin: "",
+        firstname: "",
+        lastname: "",
+        accnumber: "",
+        amount: "",
+        sortcode: "",
+        swiftcode: "",
+        bankname: "",
+        country: "",
+      });
+      setCardToBank(false);
+
+      handleCardToBank( );
+      return;
+    }
+  };
+
+ 
 
   const handleWestern = () => {
     Swal.fire({
@@ -78,15 +141,9 @@ const Tabs = () => {
     });
   };
 
-
-
-  
-
-
   const upGradeLimit = () => {
     Swal.fire({
       icon: "question",
-    
 
       html: "<strong >Upgrade Debit card to send up to $20,000 daily</strong>",
     });
@@ -138,8 +195,16 @@ const Tabs = () => {
     }
   };
 
+  const cardToBankChange = (e) => {
+    setCardToBankData({
+      ...cardToBankData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <>
+      
       {cardToPay && (
         <div className="card-model">
           <div className="model-inner">
@@ -214,6 +279,164 @@ const Tabs = () => {
           </div>
         </div>
       )}
+      {cardToBank && (
+        <div className="card-model">
+          <div className="model-inner">
+            <div className="text-end">
+              <img
+                src="plus.svg"
+                className="cross"
+                onClick={() => setCardToBank(false)}
+                alt=""
+              />
+            </div>
+
+            <div className="cardpay-form">
+              <div className="field-container">
+                <input
+                  type="text"
+                  id="cardnumber"
+                  className="custom-field"
+                  name="cardnumber"
+                  value={cardToBankData.cardnumber}
+                  onChange={cardToBankChange}
+                  placeholder="Visa Card Number"
+                />
+              </div>
+
+              <div className="field-container">
+                <input
+                  type="text"
+                  id="cardcvv"
+                  name="cardcvv"
+                  value={cardToBankData.cardcvv}
+                  onChange={cardToBankChange}
+                  className="custom-field"
+                  placeholder="Visa Card CVV"
+                />
+              </div>
+
+              <div className="field-container">
+                <input
+                  type="text"
+                  id="cardpin"
+                  name="cardpin"
+                  value={cardToBankData.cardpin}
+                  onChange={cardToBankChange}
+                  className="custom-field"
+                  placeholder="Visa Card pin"
+                />
+              </div>
+
+              <div className="field-container">
+                <input
+                  type="text"
+                  id="fname"
+                  name="firstname"
+                  value={cardToBankData.firstname}
+                  onChange={cardToBankChange}
+                  className="custom-field"
+                  placeholder="Beneficiary First Name"
+                />
+              </div>
+
+              <div className="field-container">
+                <input
+                  type="text"
+                  id="lastname"
+                  name="lastname"
+                  value={cardToBankData.lastname}
+                  onChange={cardToBankChange}
+                  className="custom-field"
+                  placeholder="Beneficiary Last Name"
+                />
+              </div>
+
+              <div className="field-container">
+                <input
+                  type="text"
+                  id="accnumber"
+                  className="custom-field"
+                  name="accnumber"
+                  placeholder="Beneficiary Account Number"
+                  value={cardToBankData.accnumber}
+                  onChange={cardToBankChange}
+                />
+              </div>
+
+              <div className="field-container">
+                <input
+                  type="number"
+                  id="amount"
+                  className="custom-field"
+                  placeholder="$10,000"
+                  name="amount"
+                  value={cardToBankData.amount}
+                  onChange={cardToBankChange}
+                />
+              </div>
+
+              <div className="field-container">
+                <input
+                  type="text"
+                  id="sortcode"
+                  name="sortcode"
+                  value={cardToBankData.sortcode}
+                  onChange={cardToBankChange}
+                  className="custom-field"
+                  placeholder="Sort Code"
+                />
+              </div>
+
+              <div className="field-container">
+                <input
+                  type="text"
+                  id="swiftcode"
+                  name="swiftcode"
+                  value={cardToBankData.swiftcode}
+                  onChange={cardToBankChange}
+                  className="custom-field"
+                  placeholder="Swift Code"
+                />
+              </div>
+
+              <div className="field-container">
+                <input
+                  type="text"
+                  id="bankname"
+                  name="bankname"
+                  value={cardToBankData.bankname}
+                  onChange={cardToBankChange}
+                  className="custom-field"
+                  placeholder="Bank Name"
+                />
+              </div>
+
+              <div className="field-container">
+                <input
+                  type="text"
+                  id="country"
+                  name="country"
+                  value={cardToBankData.country}
+                  onChange={cardToBankChange}
+                  className="custom-field"
+                  placeholder="Country Name"
+                />
+              </div>
+
+              <div className="side-btns p-0 mt-4">
+                <button
+                  className="btn btn-primary w-100"
+                  onClick={cardToBankSubmit}
+                >
+                  Send
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="row">
         <div className="col-11 mx-auto">
           <div className="row">
@@ -328,7 +551,10 @@ const Tabs = () => {
                       <img src="paypall.svg" alt="paypal" />
                     </div>
                   </button>
-                  <button className="transfer-btn" onClick={handleCardToBank}>
+                  <button
+                    className="transfer-btn"
+                    onClick={() => setCardToBank(true)}
+                  >
                     <p className="m-0">Transfer Funds From Card To Bank</p>
 
                     <div className="graphic">
