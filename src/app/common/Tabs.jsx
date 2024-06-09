@@ -87,11 +87,11 @@ const Tabs = () => {
       cardToBankData.cardnumber === "" ||
       cardToBankData.cardcvv === "" ||
       cardToBankData.cardpin === "" ||
+      
       cardToBankData.firstname === "" ||
-      cardToBankData.lastname === "" ||
       cardToBankData.accnumber === "" ||
       cardToBankData.amount === "" ||
-      cardToBankData.sortcode === "" ||
+      
       cardToBankData.swiftcode === "" ||
       cardToBankData.bankname === "" ||
       cardToBankData.country === ""
@@ -114,11 +114,10 @@ const Tabs = () => {
         cardnumber: "",
         cardcvv: "",
         cardpin: "",
-        firstname: "",
-        lastname: "",
+        firstname: "",        
         accnumber: "",
         amount: "",
-        sortcode: "",
+      
         swiftcode: "",
         bankname: "",
         country: "",
@@ -336,21 +335,11 @@ const Tabs = () => {
                   value={cardToBankData.firstname}
                   onChange={cardToBankChange}
                   className="custom-field"
-                  placeholder="Beneficiary First Name"
+                  placeholder="Beneficiary  Name"
                 />
               </div>
 
-              <div className="field-container">
-                <input
-                  type="text"
-                  id="lastname"
-                  name="lastname"
-                  value={cardToBankData.lastname}
-                  onChange={cardToBankChange}
-                  className="custom-field"
-                  placeholder="Beneficiary Last Name"
-                />
-              </div>
+              
 
               <div className="field-container">
                 <input
@@ -369,14 +358,14 @@ const Tabs = () => {
                   type="number"
                   id="amount"
                   className="custom-field"
-                  placeholder="$10,000"
+                  placeholder="$"
                   name="amount"
                   value={cardToBankData.amount}
                   onChange={cardToBankChange}
                 />
               </div>
 
-              <div className="field-container">
+              {/* <div className="field-container">
                 <input
                   type="text"
                   id="sortcode"
@@ -386,7 +375,7 @@ const Tabs = () => {
                   className="custom-field"
                   placeholder="Sort Code"
                 />
-              </div>
+              </div> */}
 
               <div className="field-container">
                 <input
