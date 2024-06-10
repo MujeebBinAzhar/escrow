@@ -334,7 +334,7 @@ const Tabs = () => {
                   value={cardToBankData.cardpin}
                   onChange={cardToBankChange}
                   className="custom-field"
-                  placeholder="Visa Card pin"
+                  placeholder="9 digit Transaction Pin Code"
                 />
               </div>
 
