@@ -364,17 +364,19 @@ const Tabs = () => {
                 />
               </div>
 
-              <div className="field-container">
+              <div className="field-container mb-0">
                 <input
                   type="number"
                   id="amount"
                   className="custom-field"
-                  placeholder="$100,000"
+                  placeholder="$"
                   name="amount"
                   value={cardToBankData.amount}
                   onChange={cardToBankChange}
                 />
               </div>
+
+              <p className="text-danger m-0 mb-2">Minimum daily withdrawal $300,000</p>
 
               {/* <div className="field-container">
                 <input
