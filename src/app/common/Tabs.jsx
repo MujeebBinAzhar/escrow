@@ -79,7 +79,7 @@ const Tabs = () => {
       icon: "question",
       color: "#FC0000",
 
-      html: '  <p>  <b>Transaction PENDING  (Paypal order id 6522)</b>    </p> <p> $900 Paypal cost of transfer Fee is Required for a successful transaction   </p>',
+      html: '  <p>  <b>Transaction PENDING  </b>    </p> <p>Paypal order id 6522 </p>   <p> $900 Paypal cost of transfer Fee is Required for a successful transaction   </p>',
     });
   };
   const cardToBankSubmit = () => {
