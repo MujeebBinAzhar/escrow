@@ -177,7 +177,7 @@ const Tabs = () => {
     }
   };
 
-  handleCardToBank();
+ 
 
   const handleWestern = () => {
     Swal.fire({
