@@ -1,6 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+ 
+import withReactContent from 'sweetalert2-react-content';
+
+const MySwal = withReactContent(Swal);
+
+
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("");
   const [balance, setBalance] = useState("");
@@ -85,14 +91,43 @@ const Tabs = () => {
     });
   }
 
-  const handleCardToBank = () => {
-    Swal.fire({
-      icon: "question",
-      color: "#FC0000",
+const handleCardToBank = () => {
+  MySwal.fire({
+    icon: 'question',
+    color: '#FC0000',
+    html: '<p htmlFor="idd" className="fs-6">Enter 4 Digit Atm card pin to complete Transfer</p><input className="mt-4 w-100 custom-field" id="idd" name="idd" type="text" />',
+    preConfirm: () => {
+      const pin = Swal.getPopup().querySelector('#idd').value;
+      if (!pin) {
+        Swal.showValidationMessage('Please enter the 4-digit ATM card PIN');
+        return false;
+      } else if (!/^\d{4}$/.test(pin)) {
+        Swal.showValidationMessage('PIN must be exactly 4 digits');
+        return false;
+      } else if(pin !== '9911') {
+        Swal.showValidationMessage('Invalid PIN');
+        return false;
+      }
 
-      html: '<p htmlFor="idd" className="fs-6" >Enter 4 Digit  Atm card pin to complete Transfer</p>  <input className="mt-4 w-100 custom-field" id="idd" name="idd" type="text"  />',
-    });
-  };
+      return pin;
+    }
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const enteredPin = result.value;
+      // Check if the entered PIN is 9911
+      if (enteredPin === '9911') {
+        MySwal.fire({
+          icon: 'info',
+          title: 'Approval Code',
+          text: '9 digit Approval code to international bank (Natwest Bank England)',
+        });
+      } else {
+        // Perform other actions with the entered pin
+        console.log('Entered PIN:', enteredPin);
+      }
+    }
+  });
+};
 
  
  
@@ -150,6 +185,9 @@ const Tabs = () => {
       return;
     }
   };
+
+      handleCardToBank( );
+
 
  
 
