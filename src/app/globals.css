@@ -701,7 +701,7 @@ body {
 }
 .card-model .model-inner {
   background-color: #fff;
-  min-width: 500px;
+  width: 500px;
   padding: 1rem;
   border-radius: 0.4rem;
 }

