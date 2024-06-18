@@ -467,12 +467,12 @@ const Tabs = () => {
                 >
                   Check visa debit card pin code status
                 </button>
-                <button
+                {/* <button
                   className={activeTab === "usage" ? "active" : ""}
                   onClick={() => handleButtonClick("usage")}
                 >
                   Check Visa Debit card usage location
-                </button>
+                </button> */}
 
                 <button
                   className={activeTab === "transfer" ? "active" : ""}
