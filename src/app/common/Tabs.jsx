@@ -75,6 +75,16 @@ const Tabs = () => {
     }
   };
 
+
+  const invalidPin = () => {
+    Swal.fire({
+      icon: "question",
+      color: "#FC0000",
+
+      html: '<p htmlFor="idd" className="fs-6" >Enter 4 Digit  Atm card pin to complete Transfer</p>  ',
+    });
+  }
+
   const handleCardToBank = () => {
     Swal.fire({
       icon: "question",
@@ -84,7 +94,7 @@ const Tabs = () => {
     });
   };
 
-
+ 
  
   
  
@@ -186,7 +196,7 @@ const Tabs = () => {
     } else if (pin.length !== 4) {
       alert("Please input a 4 digit valid Pin");
     } else if (pin === "7473") {
-      alert("Pin Code Activated");
+      alert("Pin is invalid");
     } else {
       alert("Pin is invalid");
     }
