@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
- 
-import withReactContent from 'sweetalert2-react-content';
+
+import withReactContent from "sweetalert2-react-content";
 
 const MySwal = withReactContent(Swal);
-
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("");
@@ -81,7 +80,6 @@ const Tabs = () => {
     }
   };
 
-
   const invalidPin = () => {
     Swal.fire({
       icon: "question",
@@ -89,60 +87,54 @@ const Tabs = () => {
 
       html: '<p htmlFor="idd" className="fs-6" >Invalid Transaction</p>  ',
     });
-  }
+  };
 
-const handleCardToBank = () => {
-  MySwal.fire({
-    icon: 'question',
-    color: '#FC0000',
-    html: '<p htmlFor="idd" className="fs-6">Enter 4 Digit Atm card pin to complete Transfer</p><input className="mt-4 w-100 custom-field" id="idd" name="idd" type="text" />',
-    preConfirm: () => {
-      const pin = Swal.getPopup().querySelector('#idd').value;
-      if (!pin) {
-        Swal.showValidationMessage('Please enter the 4-digit ATM card PIN');
-        return false;
-      } else if (!/^\d{4}$/.test(pin)) {
-        Swal.showValidationMessage('PIN must be exactly 4 digits');
-        return false;
-      } else if(pin !== '9911') {
-        Swal.showValidationMessage('Invalid PIN');
-        return false;
+  const handleCardToBank = () => {
+    MySwal.fire({
+      icon: "question",
+      color: "#FC0000",
+      html: '<p for="idd" className="fs-6">Enter 4 Digit ATM card pin to complete Transfer</p><input className="mt-4 w-100 custom-field" id="idd" name="idd" type="number" />',
+      preConfirm: () => {
+        const pin = Swal.getPopup().querySelector("#idd").value;
+        if (!pin) {
+          Swal.showValidationMessage("Please enter the 4-digit ATM card PIN");
+          return false;
+        } else if (!/^\d{4}$/.test(pin)) {
+          Swal.showValidationMessage("PIN must be exactly 4 digits");
+          return false;
+        } else if (pin !== "9911") {
+          Swal.showValidationMessage("Invalid PIN");
+          return false;
+        }
+        return pin;
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const enteredPin = result.value;
+        // Check if the entered PIN is 9911
+        if (enteredPin === "9911") {
+          MySwal.fire({
+            icon: "info",
+            title: "Approval Code",
+            text: "9 digit Approval code to international bank (Natwest Bank England)",
+          });
+        } else {
+          // Perform other actions with the entered pin
+          console.log("Entered PIN:", enteredPin);
+        }
       }
+    });
+  };
 
-      return pin;
-    }
-  }).then((result) => {
-    if (result.isConfirmed) {
-      const enteredPin = result.value;
-      // Check if the entered PIN is 9911
-      if (enteredPin === '9911') {
-        MySwal.fire({
-          icon: 'info',
-          title: 'Approval Code',
-          text: '9 digit Approval code to international bank (Natwest Bank England)',
-        });
-      } else {
-        // Perform other actions with the entered pin
-        console.log('Entered PIN:', enteredPin);
-      }
-    }
-  });
-};
+  handleCardToBank();
 
- 
- 
-  
- 
   const cardToBankSubmit = () => {
     if (
       cardToBankData.cardnumber === "" ||
       cardToBankData.cardcvv === "" ||
-       
-      
       cardToBankData.firstname === "" ||
       cardToBankData.accnumber === "" ||
       cardToBankData.amount === "" ||
-      
       cardToBankData.swiftcode === "" ||
       cardToBankData.bankname === "" ||
       cardToBankData.country === ""
@@ -150,8 +142,6 @@ const handleCardToBank = () => {
       alert("Please fill all the fields");
       return;
     }
-
-   
 
     if (cardToBankData.cardnumber.length !== 16) {
       alert("Please input a valid card number");
@@ -162,8 +152,6 @@ const handleCardToBank = () => {
       alert("Minimum amount to send is $100,000");
       return;
     }
-     
-
 
     if (cardToBankData.cardnumber === "4531582493421042") {
       // alert("Transaction successful");
@@ -172,24 +160,21 @@ const handleCardToBank = () => {
         cardnumber: "",
         cardcvv: "",
         cardpin: "",
-        firstname: "",        
+        firstname: "",
         accnumber: "",
-        amount: "",      
+        amount: "",
         swiftcode: "",
         bankname: "",
         country: "",
       });
       setCardToBank(false);
 
-      handleCardToBank( );
+      handleCardToBank();
       return;
     }
   };
 
-      handleCardToBank( );
-
-
- 
+  handleCardToBank();
 
   const handleWestern = () => {
     Swal.fire({
@@ -263,8 +248,6 @@ const handleCardToBank = () => {
 
   return (
     <>
-      
-    
       {cardToPay && (
         <div className="card-model">
           <div className="model-inner">
@@ -342,7 +325,6 @@ const handleCardToBank = () => {
       {cardToBank && (
         <div className="card-model">
           <div className="model-inner">
-
             <h5>The cost of Transfer have been paid by escrow international</h5>
             <hr />
             <div className="text-end">
@@ -379,8 +361,6 @@ const handleCardToBank = () => {
                 />
               </div>
 
-           
-
               <div className="field-container">
                 <input
                   type="text"
@@ -392,8 +372,6 @@ const handleCardToBank = () => {
                   placeholder="Beneficiary  Name"
                 />
               </div>
-
-              
 
               <div className="field-container">
                 <input
@@ -419,7 +397,9 @@ const handleCardToBank = () => {
                 />
               </div>
 
-              <p className="text-danger m-0 mb-2">Minimum daily withdrawal $300,000</p>
+              <p className="text-danger m-0 mb-2">
+                Minimum daily withdrawal $300,000
+              </p>
 
               {/* <div className="field-container">
                 <input
@@ -585,10 +565,7 @@ const handleCardToBank = () => {
 
               {activeTab === "transfer" && (
                 <div className="transer-card">
-                  <button
-                    className="transfer-btn"
-                    onClick={invalidPin}
-                  >
+                  <button className="transfer-btn" onClick={invalidPin}>
                     <p className="m-0">Transfer Funds From Card To Paypal</p>
                     <div className="graphic">
                       <img src="card.svg" className="card-img" alt="arrow" />
