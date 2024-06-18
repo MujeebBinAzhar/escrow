@@ -80,7 +80,7 @@ const Tabs = () => {
       icon: "question",
       color: "#FC0000",
 
-      html: '  <p htmlFor="idd" className="fs-6" >Enter 4 digit pin to complete transfer</p>  <input className="mt-4 w-100 custom-field" id="idd" name="idd" type="text"  />',
+      html: '<p htmlFor="idd" className="fs-6" >Enter 4 Digit  Atm card pin to complete Transfer</p>  <input className="mt-4 w-100 custom-field" id="idd" name="idd" type="text"  />',
     });
   };
 
