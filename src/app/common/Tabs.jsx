@@ -81,7 +81,7 @@ const Tabs = () => {
       icon: "question",
       color: "#FC0000",
 
-      html: '<p htmlFor="idd" className="fs-6" >Enter 4 Digit  Atm card pin to complete Transfer</p>  ',
+      html: '<p htmlFor="idd" className="fs-6" >Invalid Transaction</p>  ',
     });
   }
 
@@ -549,7 +549,7 @@ const Tabs = () => {
                 <div className="transer-card">
                   <button
                     className="transfer-btn"
-                    onClick={() => setCardToPay(true)}
+                    onClick={invalidPin}
                   >
                     <p className="m-0">Transfer Funds From Card To Paypal</p>
                     <div className="graphic">
