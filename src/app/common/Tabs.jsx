@@ -156,8 +156,6 @@ const Tabs = () => {
   };
   
 
-  handleCardToBank()
-   
  
   const cardToBankSubmit = () => {
     if (
