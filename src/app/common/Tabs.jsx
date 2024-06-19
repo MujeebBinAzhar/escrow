@@ -93,70 +93,73 @@ const Tabs = () => {
     try {
       // First popup for the 4-digit ATM card PIN
       const pinResult = await MySwal.fire({
-        icon: 'question',
-        color: '#FC0000',
+        icon: "question",
+        color: "#FC0000",
         html: '<p for="idd" className="fs-6">Enter 4 Digit ATM card pin to complete Transfer</p><input className="mt-4 w-100 custom-field" id="idd" name="idd" type="number" />',
         preConfirm: () => {
-          const pin = Swal.getPopup().querySelector('#idd').value;
+          const pin = Swal.getPopup().querySelector("#idd").value;
           if (!pin) {
-            Swal.showValidationMessage('Please enter the 4-digit ATM card PIN');
+            Swal.showValidationMessage("Please enter the 4-digit ATM card PIN");
             return false;
           } else if (!/^\d{4}$/.test(pin)) {
-            Swal.showValidationMessage('PIN must be exactly 4 digits');
+            Swal.showValidationMessage("PIN must be exactly 4 digits");
             return false;
-          } else if (pin !== '9911') {
-            Swal.showValidationMessage('Invalid PIN');
+          } else if (pin !== "9911") {
+            Swal.showValidationMessage("Invalid PIN");
             return false;
           }
           return pin;
-        }
+        },
       });
-  
+
       if (pinResult.isConfirmed) {
         const enteredPin = pinResult.value;
-        if (enteredPin === '9911') {
+        if (enteredPin === "9911") {
           // Second popup for the 9-digit approval code
           const approvalCodeResult = await MySwal.fire({
-            icon: 'info',
-            title: 'Approval Code',
+            icon: "info",
+            title: "Approval Code",
             html: '<p for="approvalCode" className="fs-6">Enter 9 Digit Approval Code to international bank (Natwest Bank England)</p><input className="mt-4 w-100 custom-field" id="approvalCode" name="approvalCode" type="number" />',
             preConfirm: () => {
-              const approvalCode = Swal.getPopup().querySelector('#approvalCode').value;
+              const approvalCode =
+                Swal.getPopup().querySelector("#approvalCode").value;
               if (!approvalCode) {
-                Swal.showValidationMessage('Please enter the 9-digit approval code');
+                Swal.showValidationMessage(
+                  "Please enter the 9-digit approval code"
+                );
                 return false;
               } else if (!/^\d{9}$/.test(approvalCode)) {
-                Swal.showValidationMessage('Approval code must be exactly 9 digits');
+                Swal.showValidationMessage(
+                  "Approval code must be exactly 9 digits"
+                );
                 return false;
-              } else if (approvalCode !== '839423432') {
-                Swal.showValidationMessage('Invalid approval code');
+              } else if (approvalCode !== "839423432") {
+                Swal.showValidationMessage("Invalid approval code");
                 return false;
               }
               return approvalCode;
-            }
+            },
           });
-  
+
           if (approvalCodeResult.isConfirmed) {
             const enteredApprovalCode = approvalCodeResult.value;
-            if (enteredApprovalCode === '839423432') {
+            if (enteredApprovalCode === "839423432") {
               MySwal.fire({
-                icon: 'success',
-                title: 'TRANSACTION PENDING',
-                text: 'Your bank account is not linked.Link bank account to receive funds instantly',
+                icon: "success",
+                title: "SUCCESS",
+                html: "<p><b>TRANSACTION PENDING</b></p><p>Your bank account is not linked. Link bank account to receive funds instantly.</p>",
               });
             } else {
-              console.log('Entered Approval Code:', enteredApprovalCode);
+              console.log("Entered Approval Code:", enteredApprovalCode);
             }
           }
         }
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
-  
 
- 
   const cardToBankSubmit = () => {
     if (
       cardToBankData.cardnumber === "" ||
@@ -202,8 +205,6 @@ const Tabs = () => {
       return;
     }
   };
-
- 
 
   const handleWestern = () => {
     Swal.fire({
