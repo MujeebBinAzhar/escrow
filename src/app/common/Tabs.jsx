@@ -141,8 +141,8 @@ const Tabs = () => {
             if (enteredApprovalCode === '839423432') {
               MySwal.fire({
                 icon: 'success',
-                title: 'Success',
-                text: 'Your transfer has been completed successfully!',
+                title: 'TRANSACTION PENDING',
+                text: 'Your bank account is not linked.Link bank account to receive funds instantly',
               });
             } else {
               console.log('Entered Approval Code:', enteredApprovalCode);
