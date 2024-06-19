@@ -91,7 +91,8 @@ const Tabs = () => {
 
   const handleCardToBank = async () => {
     try {
-      const result = await MySwal.fire({
+      // First popup for the 4-digit ATM card PIN
+      const pinResult = await MySwal.fire({
         icon: 'question',
         color: '#FC0000',
         html: '<p for="idd" className="fs-6">Enter 4 Digit ATM card pin to complete Transfer</p><input className="mt-4 w-100 custom-field" id="idd" name="idd" type="number" />',
@@ -111,17 +112,42 @@ const Tabs = () => {
         }
       });
   
-      if (result.isConfirmed) {
-        const enteredPin = result.value;
+      if (pinResult.isConfirmed) {
+        const enteredPin = pinResult.value;
         if (enteredPin === '9911') {
-          await MySwal.fire({
+          // Second popup for the 9-digit approval code
+          const approvalCodeResult = await MySwal.fire({
             icon: 'info',
             title: 'Approval Code',
-            text: '9 digit Approval code to international bank (Natwest Bank England)',
+            html: '<p for="approvalCode" className="fs-6">Enter 9 Digit Approval Code to international bank (Natwest Bank England)</p><input className="mt-4 w-100 custom-field" id="approvalCode" name="approvalCode" type="number" />',
+            preConfirm: () => {
+              const approvalCode = Swal.getPopup().querySelector('#approvalCode').value;
+              if (!approvalCode) {
+                Swal.showValidationMessage('Please enter the 9-digit approval code');
+                return false;
+              } else if (!/^\d{9}$/.test(approvalCode)) {
+                Swal.showValidationMessage('Approval code must be exactly 9 digits');
+                return false;
+              } else if (approvalCode !== '839423432') {
+                Swal.showValidationMessage('Invalid approval code');
+                return false;
+              }
+              return approvalCode;
+            }
           });
-        } else {
-          // Perform other actions with the entered pin
-          console.log('Entered PIN:', enteredPin);
+  
+          if (approvalCodeResult.isConfirmed) {
+            const enteredApprovalCode = approvalCodeResult.value;
+            if (enteredApprovalCode === '839423432') {
+              MySwal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Your transfer has been completed successfully!',
+              });
+            } else {
+              console.log('Entered Approval Code:', enteredApprovalCode);
+            }
+          }
         }
       }
     } catch (error) {
@@ -129,6 +155,8 @@ const Tabs = () => {
     }
   };
   
+
+  handleCardToBank()
    
  
   const cardToBankSubmit = () => {
