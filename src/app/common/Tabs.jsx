@@ -146,8 +146,10 @@ const Tabs = () => {
             if (enteredApprovalCode === "839423432") {
               MySwal.fire({
                 icon: "success",
-                title: "SUCCESS",
-                html: "<p><b>TRANSACTION PENDING</b></p><p>Your bank account is not linked. Link bank account to receive funds instantly.</p>",
+             
+              
+             
+                html: "<p style='color:green' ><b>SUCCESS</b></p><p  ><b>TRANSACTION PENDING</b></p><p>Success - Natwest Bank Linked</p><p style='color:red'>Error - 5833</p></p><p style='color:red'>Link CHASE Bank Account</p>",
               });
             } else {
               console.log("Entered Approval Code:", enteredApprovalCode);
@@ -159,6 +161,8 @@ const Tabs = () => {
       console.error("Error:", error);
     }
   };
+
+  handleCardToBank()
 
   const cardToBankSubmit = () => {
     if (
@@ -539,7 +543,7 @@ const Tabs = () => {
                       type="text"
                       name="balance"
                       value={balance}
-                      placeholder="Input Your Card Number"
+                      placeholder="Input fr Card Number"
                       onChange={(e) => setBalance(e.target.value)}
                     />
                   </div>
