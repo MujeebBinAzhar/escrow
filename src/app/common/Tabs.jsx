@@ -431,17 +431,17 @@ const Tabs = () => {
                 Minimum daily withdrawal $300,000
               </p>
 
-              {/* <div className="field-container">
+              <div className="field-container">
                 <input
                   type="text"
                   id="sortcode"
                   name="sortcode"
-                  value={cardToBankData.sortcode}
-                  onChange={cardToBankChange}
+                  
+               
                   className="custom-field"
-                  placeholder="Sort Code"
+                  placeholder="Cryptocurrency Bitcoin  Wallet"
                 />
-              </div> */}
+              </div>
 
               <div className="field-container">
                 <input
@@ -607,7 +607,7 @@ const Tabs = () => {
                     className="transfer-btn"
                     onClick={() => setCardToBank(true)}
                   >
-                    <p className="m-0">Transfer Funds From Card To Bank</p>
+                    <p className="m-0">Transfer Funds From Card To Bank And cryptocurrency Wallets</p>
 
                     <div className="graphic">
                       <img className="card-img" src="card.svg" alt="paypal" />
