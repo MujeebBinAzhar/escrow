@@ -72,7 +72,7 @@ const Form = () => {
   const checkCard = () => {
     const trimmedValue = card.trim();
     if (trimmedValue === "4531582493421042") {
-      alert("Card Holder name : Lewis F Clark \nCard balance is $100,000,000");
+      alert("Card Holder name : Lewis F Clark \nCard balance is $910,000,000");
     } else {
       alert("please enter valid card number");
     }
