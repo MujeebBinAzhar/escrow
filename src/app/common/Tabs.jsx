@@ -149,7 +149,7 @@ const Tabs = () => {
              
               
              
-                html: "<p style='color:green' ><b>SUCCESS</b></p><p  ><b>TRANSACTION PENDING</b></p><p>Success - Natwest Bank Linked</p><p style='color:red'>Error - 5833</p></p><p style='color:red'>Link CHASE Bank Account</p>",
+                html: "<p style='color:green' ><b>SUCCESS</b></p><p  ><b>TRANSACTION PENDING</b></p> <p style='color:red'>Error - 232</p><p style='color:red'>FOR A SUCCESSFUL TRANSACTION,WITHDRAW A MINIMUM OF $1,000 FROM THE ATM CARD AT THE ATM LOCATION IN  BOSTON</p>",
               });
             } else {
               console.log("Entered Approval Code:", enteredApprovalCode);
