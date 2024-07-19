@@ -253,7 +253,7 @@ const Tabs = () => {
     } else if (pin.length !== 4) {
       alert("Please input a 4 digit valid Pin");
     } else if (pin === "5391") {
-      alert("Lewis clark \nAtm pin activated\nComplete  $1,000 signature payments\nFor pin to process money withdrawal at Atm machine");
+      alert("Lewis clark \nAtm pin ACTIVE (Activated)\nNew pin expires\n21 july 2022. If un-used\nComplete  $1,000 signature payments\nFor pin to process money withdrawal at Atm machine");
     } else {
       alert("Pin is invalid");
     }
