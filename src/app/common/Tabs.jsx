@@ -266,9 +266,10 @@ const Tabs = () => {
       alert("Please input a valid card number");
       setShowRegion(false);
     } else if (region === "4531582493421042") {
-      setShowRegion(true);
+      // setShowRegion(true);
+      alert("LEWIS F CLARK\nVisa card not converted for United States of America usage");
     } else {
-      alert("Card Number is invalid");
+      
       setShowRegion(false);
     }
   };
@@ -519,12 +520,7 @@ const Tabs = () => {
                 >
                   Check visa debit card pin code status
                 </button>
-                {/* <button
-                  className={activeTab === "usage" ? "active" : ""}
-                  onClick={() => handleButtonClick("usage")}
-                >
-                  Check Visa Debit card usage location
-                </button> */}
+                
 
                 <button
                   className={activeTab === "transfer" ? "active" : ""}
@@ -532,6 +528,13 @@ const Tabs = () => {
                 >
                   Transfer Funds via Debit Card
                 </button>
+
+                <button
+                  className={activeTab === "usage" ? "active" : ""}
+                  onClick={() => handleButtonClick("usage")}
+                >
+                 Check visa card conversion status
+                </button>  
               </div>
             </div>
 
