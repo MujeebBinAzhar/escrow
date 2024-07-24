@@ -267,7 +267,7 @@ const Tabs = () => {
       setShowRegion(false);
     } else if (region === "4531582493421042") {
       // setShowRegion(true);
-      alert("LEWIS F CLARK\nVisa card not converted for United States of America usage");
+      alert("VISA DEBIT CARD CONVERTED");
     } else {
       
       setShowRegion(false);
