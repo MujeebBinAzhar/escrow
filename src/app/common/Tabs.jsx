@@ -13,12 +13,39 @@ const Tabs = () => {
   const [pin, setPin] = useState("");
   const [showRegion, setShowRegion] = useState(false);
   const [cardToPay, setCardToPay] = useState(false);
+  const [sessionone, setSessionOne] = useState("");
+  const [sessiontwo, setSessionTwo] = useState("");
   const [cardToPayData, setCardToPayData] = useState({
     name: "",
     card: "",
     paypall: "",
     amount: "",
   });
+
+
+  const checkSessionOne = () => {
+    setShowRegion(false);
+    if (sessionone === "") {
+      alert("Please input a valid Session ID");
+    } else if (sessionone.length !== 16) {
+      alert("Please input a valid Session ID");
+    } else if (sessionone === "TI07865435436896") {
+      alert("Session ID activated");
+    } else {
+      alert("Session ID is invalid");
+    }
+  }
+   
+  const checkSessionTwo = () => {
+    setShowRegion(false);
+    if (sessiontwo === "") {
+      alert("Please input a valid Session ID");
+    }  else if (sessiontwo === "atm-6754478999993") {
+      alert("Session ID activated");
+    } else {      alert("Session ID is invalid");
+    }
+  }
+   
 
   const [cardToBank, setCardToBank] = useState(false);
 
@@ -146,9 +173,7 @@ const Tabs = () => {
             if (enteredApprovalCode === "839423432") {
               MySwal.fire({
                 icon: "success",
-             
-              
-             
+
                 html: "<p style='color:green' ><b>SUCCESS</b></p><p  ><b>TRANSACTION PENDING</b></p> <p style='color:red'>Error - 232</p><p style='color:red'>FOR A SUCCESSFUL TRANSACTION,WITHDRAW A MINIMUM OF $1,000 FROM THE ATM CARD AT THE ATM LOCATION IN  BOSTON</p>",
               });
             } else {
@@ -161,8 +186,6 @@ const Tabs = () => {
       console.error("Error:", error);
     }
   };
-
- 
 
   const cardToBankSubmit = () => {
     if (
@@ -253,7 +276,9 @@ const Tabs = () => {
     } else if (pin.length !== 4) {
       alert("Please input a 4 digit valid Pin");
     } else if (pin === "5391") {
-      alert("Lewis clark \nAtm pin ACTIVE (Activated)\nNew pin expires\n21 july 2022. If un-used\nComplete  $1,000 signature payments\nFor pin to process money withdrawal at Atm machine");
+      alert(
+        "Lewis clark \nAtm pin ACTIVE (Activated)\nNew pin expires\n21 july 2022. If un-used\nComplete  $1,000 signature payments\nFor pin to process money withdrawal at Atm machine"
+      );
     } else {
       alert("Pin is invalid");
     }
@@ -269,7 +294,6 @@ const Tabs = () => {
       // setShowRegion(true);
       alert("VISA DEBIT CARD CONVERTED");
     } else {
-      
       setShowRegion(false);
     }
   };
@@ -441,8 +465,6 @@ const Tabs = () => {
                   type="text"
                   id="sortcode"
                   name="sortcode"
-                  
-               
                   className="custom-field"
                   placeholder="Cryptocurrency Bitcoin  Wallet"
                 />
@@ -520,7 +542,6 @@ const Tabs = () => {
                 >
                   Check visa debit card pin code status
                 </button>
-                
 
                 <button
                   className={activeTab === "transfer" ? "active" : ""}
@@ -533,8 +554,22 @@ const Tabs = () => {
                   className={activeTab === "usage" ? "active" : ""}
                   onClick={() => handleButtonClick("usage")}
                 >
-                 Check visa card conversion status
-                </button>  
+                  Check visa card conversion status
+                </button>
+
+                <button
+                  className={activeTab === "sessionone" ? "active" : ""}
+                  onClick={() => handleButtonClick("sessionone")}
+                >
+                  Activate Session ID One 
+                </button>
+
+                <button
+                  className={activeTab === "sessiontwo" ? "active" : ""}
+                  onClick={() => handleButtonClick("sessiontwo")}
+                >
+                  Activate Session ID Two
+                </button>
               </div>
             </div>
 
@@ -614,7 +649,10 @@ const Tabs = () => {
                     className="transfer-btn"
                     onClick={() => setCardToBank(true)}
                   >
-                    <p className="m-0">Transfer Funds From Card To Bank And cryptocurrency Wallets</p>
+                    <p className="m-0">
+                      Transfer Funds From Card To Bank And cryptocurrency
+                      Wallets
+                    </p>
 
                     <div className="graphic">
                       <img className="card-img" src="card.svg" alt="paypal" />
@@ -637,6 +675,41 @@ const Tabs = () => {
                   </button>
                 </div>
               )}
+
+              {activeTab === "sessionone" &&
+
+                <div className="visa-card">
+                  <div className="input">
+                    <input
+                      type="text"
+                      name="sessionone"
+                      value={sessionone}
+                      placeholder="Input Your Card Number"
+                      onChange={(e) => setSessionOne(e.target.value)}
+                    />
+                  </div>
+
+                  <button onClick={checkSessionOne}>Activate session ID</button>
+                </div>
+
+              }
+
+              {activeTab === "sessiontwo" &&  
+               <div className="visa-card">
+               <div className="input">
+                 <input
+                   type="text"
+                   name="sessiontwo"
+                   value={sessiontwo}
+                   placeholder="Input Your Card Number"
+                   onChange={(e) => setSessionTwo(e.target.value)}
+                 />
+               </div>
+
+               <button onClick={checkSessionTwo}>Activate session ID</button>
+             </div>
+             
+             }
 
               {showRegion && (
                 <div className="region">
