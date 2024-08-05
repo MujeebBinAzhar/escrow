@@ -684,7 +684,7 @@ const Tabs = () => {
                       type="text"
                       name="sessionone"
                       value={sessionone}
-                      placeholder="Input Your Card Number"
+                      placeholder="Input session ID"
                       onChange={(e) => setSessionOne(e.target.value)}
                     />
                   </div>
@@ -701,7 +701,7 @@ const Tabs = () => {
                    type="text"
                    name="sessiontwo"
                    value={sessiontwo}
-                   placeholder="Input Your Card Number"
+                   placeholder="Input session ID"
                    onChange={(e) => setSessionTwo(e.target.value)}
                  />
                </div>
