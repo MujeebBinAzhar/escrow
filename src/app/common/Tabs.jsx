@@ -41,7 +41,7 @@ const Tabs = () => {
     if (sessiontwo === "") {
       alert("Please input a valid Session ID");
     }  else if (sessiontwo === "atm-6754478999993") {
-      alert("Session ID activated");
+      alert("Session ID activation successful.\nDeposit $300 To Add session ID to Beneficiaries ATM card  for instant  ATM withdrawals at ATM locations");
     } else {      alert("Session ID is invalid");
     }
   }
