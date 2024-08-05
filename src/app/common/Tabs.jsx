@@ -30,7 +30,7 @@ const Tabs = () => {
     } else if (sessionone.length !== 16) {
       alert("Please input a valid Session ID");
     } else if (sessionone === "TI07865435436896") {
-      alert("Session ID activated");
+      alert("Session ID activation successful.\nDeposit $300 To Add session ID to Beneficiaries Bank for instant  $300,000 deposit to Beneficiary Bank");
     } else {
       alert("Session ID is invalid");
     }
