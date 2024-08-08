@@ -15,6 +15,7 @@ const Tabs = () => {
   const [cardToPay, setCardToPay] = useState(false);
   const [sessionone, setSessionOne] = useState("");
   const [sessiontwo, setSessionTwo] = useState("");
+  const [funds, setFunds] = useState("");
   const [cardToPayData, setCardToPayData] = useState({
     name: "",
     card: "",
@@ -35,6 +36,8 @@ const Tabs = () => {
       alert("Session ID is invalid");
     }
   }
+
+
    
   const checkSessionTwo = () => {
     setShowRegion(false);
@@ -46,6 +49,21 @@ const Tabs = () => {
     }
   }
    
+
+  const checkFunds = () => {
+    setShowRegion(false);
+    if (funds === "") {
+      alert("Please input a valid Identification Code");
+    } else if (funds.length !== 14) {
+      alert("Please input a valid Identification Code");
+    } else if (funds === "86633356709758") {
+      alert("SUCCESS\nFUNDS RELEASED\nPENDING RELEASE FEE $3000 USD");
+    } else {
+      alert("Identification Code is invalid");
+    }
+
+  }
+
 
   const [cardToBank, setCardToBank] = useState(false);
 
@@ -570,6 +588,13 @@ const Tabs = () => {
                 >
                   Activate Session ID Two
                 </button>
+
+                <button
+                  className={activeTab === "funds" ? "active" : ""}
+                  onClick={() => handleButtonClick("funds")}
+                >
+                  Funds Release Approval
+                </button>
               </div>
             </div>
 
@@ -675,6 +700,27 @@ const Tabs = () => {
                   </button>
                 </div>
               )}
+
+
+
+{activeTab === "funds" &&
+
+<div className="visa-card">
+  <div className="input w-100">
+    <input
+      type="text"
+      name="funds"
+      value={funds}
+      placeholder="Input 14 digit Identification Code Pin"
+      onChange={(e) => setFunds(e.target.value)}
+    />
+  </div>
+
+  <button onClick={checkFunds}>Submit</button>
+</div>
+
+}
+
 
               {activeTab === "sessionone" &&
 
