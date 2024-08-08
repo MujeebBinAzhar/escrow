@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
        
         <ProtectedRoutes>{children}</ProtectedRoutes>
         
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

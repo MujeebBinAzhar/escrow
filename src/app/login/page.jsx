@@ -9,8 +9,8 @@ const page = () => {
 
   return (
    <>
-    {/* <Navbar/>
-    <Form/> */}
+    <Navbar/>
+    <Form/>
    </>
     
   );
