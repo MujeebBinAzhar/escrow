@@ -718,4 +718,12 @@ body {
 }
 .cardpay-form .field-container input {
   padding: 0.3rem 1rem;
+}
+
+.scammer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=globals.css.map */

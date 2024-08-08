@@ -4,7 +4,9 @@ import AdminPage from './AdminPage'
 const page = () => {
   return (
     <>
-    <AdminPage/>
+    {/* <AdminPage/> */}
+
+    
     </>
   )
 }
