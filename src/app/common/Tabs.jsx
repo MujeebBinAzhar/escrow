@@ -92,7 +92,7 @@ const Tabs = () => {
         },
         willClose: () => {
           Swal.fire({
-            html:` NATWEST BANK REQUESTING<br>     TRANSACTION CHARGE <br>           $499 <br>           CONTACT SUPPORT <br> TRANSFER PENDING 90% COMPLETED`,}
+            html:` NATWEST BANK REQUESTING<br>     TRANSACTION CHARGE <br>           $499 <br>           CONTACT ESCROW SUPPORT <br> TRANSFER PENDING 90% COMPLETED`,}
             
           );
         },
