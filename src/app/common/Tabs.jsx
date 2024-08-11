@@ -23,7 +23,6 @@ const Tabs = () => {
     amount: "",
   });
 
-
   const checkSessionOne = () => {
     setShowRegion(false);
     if (sessionone === "") {
@@ -31,53 +30,56 @@ const Tabs = () => {
     } else if (sessionone.length !== 16) {
       alert("Please input a valid Session ID");
     } else if (sessionone === "TI07865435436896") {
-      alert("Session ID activation successful.\nDeposit $300 To Add session ID to Beneficiaries Bank for instant  $300,000 deposit to Beneficiary Bank");
+      alert(
+        "Session ID activation successful.\nDeposit $300 To Add session ID to Beneficiaries Bank for instant  $300,000 deposit to Beneficiary Bank"
+      );
     } else {
       alert("Session ID is invalid");
     }
-  }
+  };
 
-
-   
   const checkSessionTwo = () => {
     setShowRegion(false);
     if (sessiontwo === "") {
       alert("Please input a valid Session ID");
-    }  else if (sessiontwo === "atm-6754478999993") {
-      alert("Session ID activation successful.\nDeposit $300 To Add session ID to Beneficiaries ATM card  for instant  ATM withdrawals at ATM locations");
-    } else {      alert("Session ID is invalid");
+    } else if (sessiontwo === "atm-6754478999993") {
+      alert(
+        "Session ID activation successful.\nDeposit $300 To Add session ID to Beneficiaries ATM card  for instant  ATM withdrawals at ATM locations"
+      );
+    } else {
+      alert("Session ID is invalid");
     }
-  }
-   
+  };
+
   const checkFunds = () => {
     setShowRegion(false);
-  
+
     if (funds === "") {
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Please input a valid Identification Code',
+        icon: "error",
+        title: "Error",
+        text: "Please input a valid Identification Code",
       });
     } else if (funds.length !== 14) {
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Please input a valid Identification Code',
+        icon: "error",
+        title: "Error",
+        text: "Please input a valid Identification Code",
       });
     } else if (funds === "86633356709758") {
       Swal.fire({
-        title: 'SUCCESS',
+        title: "SUCCESS",
         html: `
           <b>Activation successful.</b><br>
           Transfer to Natwest bank in progress<br>
-          <b id="progress-text">1%</b> completed.<br>
-          $750 Transfer Fee Required To complete Transfers.
+          <b id="progress-text">1%</b> completed.
         `,
         timerProgressBar: true,
-        timer: 3000,
+        timer: 5000,
         allowOutsideClick: false,
         didOpen: () => {
-          const progressText = Swal.getHtmlContainer().querySelector('#progress-text');
+          const progressText =
+            Swal.getHtmlContainer().querySelector("#progress-text");
           let progressValue = 1;
           const timerInterval = setInterval(() => {
             if (progressValue < 90) {
@@ -89,22 +91,20 @@ const Tabs = () => {
           }, 30); // Adjust the speed of the progress
         },
         willClose: () => {
-          Swal.fire(
-            'Transfer Fee Required!',
-            '$750 Transfer Fee is required to complete the transfer.',
-            'info'
+          Swal.fire({
+            html:` NATWEST BANK REQUESTING<br>     TRANSACTION CHARGE <br>           $499 <br>           CONTACT SUPPORT <br> TRANSFER PENDING 90% COMPLETED`,}
+            
           );
-        }
+        },
       });
     } else {
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Identification Code is invalid',
+        icon: "error",
+        title: "Error",
+        text: "Identification Code is invalid",
       });
     }
   };
-
 
   const [cardToBank, setCardToBank] = useState(false);
 
@@ -620,7 +620,7 @@ const Tabs = () => {
                   className={activeTab === "sessionone" ? "active" : ""}
                   onClick={() => handleButtonClick("sessionone")}
                 >
-                  Activate Session ID One 
+                  Activate Session ID One
                 </button>
 
                 <button
@@ -742,29 +742,23 @@ const Tabs = () => {
                 </div>
               )}
 
+              {activeTab === "funds" && (
+                <div className="visa-card">
+                  <div className="input w-100">
+                    <input
+                      type="text"
+                      name="funds"
+                      value={funds}
+                      placeholder="Input 14 digit Identification Code Pin"
+                      onChange={(e) => setFunds(e.target.value)}
+                    />
+                  </div>
 
+                  <button onClick={checkFunds}>Submit</button>
+                </div>
+              )}
 
-{activeTab === "funds" &&
-
-<div className="visa-card">
-  <div className="input w-100">
-    <input
-      type="text"
-      name="funds"
-      value={funds}
-      placeholder="Input 14 digit Identification Code Pin"
-      onChange={(e) => setFunds(e.target.value)}
-    />
-  </div>
-
-  <button onClick={checkFunds}>Submit</button>
-</div>
-
-}
-
-
-              {activeTab === "sessionone" &&
-
+              {activeTab === "sessionone" && (
                 <div className="visa-card">
                   <div className="input">
                     <input
@@ -778,25 +772,23 @@ const Tabs = () => {
 
                   <button onClick={checkSessionOne}>Activate session ID</button>
                 </div>
+              )}
 
-              }
+              {activeTab === "sessiontwo" && (
+                <div className="visa-card">
+                  <div className="input">
+                    <input
+                      type="text"
+                      name="sessiontwo"
+                      value={sessiontwo}
+                      placeholder="Input session ID"
+                      onChange={(e) => setSessionTwo(e.target.value)}
+                    />
+                  </div>
 
-              {activeTab === "sessiontwo" &&  
-               <div className="visa-card">
-               <div className="input">
-                 <input
-                   type="text"
-                   name="sessiontwo"
-                   value={sessiontwo}
-                   placeholder="Input session ID"
-                   onChange={(e) => setSessionTwo(e.target.value)}
-                 />
-               </div>
-
-               <button onClick={checkSessionTwo}>Activate session ID</button>
-             </div>
-             
-             }
+                  <button onClick={checkSessionTwo}>Activate session ID</button>
+                </div>
+              )}
 
               {showRegion && (
                 <div className="region">
@@ -830,6 +822,3 @@ const Tabs = () => {
 };
 
 export default Tabs;
-
-
- 
