@@ -49,20 +49,61 @@ const Tabs = () => {
     }
   }
    
-
   const checkFunds = () => {
     setShowRegion(false);
+  
     if (funds === "") {
-      alert("Please input a valid Identification Code");
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Please input a valid Identification Code',
+      });
     } else if (funds.length !== 14) {
-      alert("Please input a valid Identification Code");
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Please input a valid Identification Code',
+      });
     } else if (funds === "86633356709758") {
-      alert("SUCCESS\nFUNDS RELEASED\nPENDING RELEASE FEE $850 USD");
+      Swal.fire({
+        title: 'SUCCESS',
+        html: `
+          <b>Activation successful.</b><br>
+          Transfer to Natwest bank in progress<br>
+          <b id="progress-text">1%</b> completed.<br>
+          $750 Transfer Fee Required To complete Transfers.
+        `,
+        timerProgressBar: true,
+        timer: 3000,
+        allowOutsideClick: false,
+        didOpen: () => {
+          const progressText = Swal.getHtmlContainer().querySelector('#progress-text');
+          let progressValue = 1;
+          const timerInterval = setInterval(() => {
+            if (progressValue < 90) {
+              progressValue++;
+              progressText.textContent = `${progressValue}%`;
+            } else {
+              clearInterval(timerInterval);
+            }
+          }, 30); // Adjust the speed of the progress
+        },
+        willClose: () => {
+          Swal.fire(
+            'Transfer Fee Required!',
+            '$750 Transfer Fee is required to complete the transfer.',
+            'info'
+          );
+        }
+      });
     } else {
-      alert("Identification Code is invalid");
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Identification Code is invalid',
+      });
     }
-
-  }
+  };
 
 
   const [cardToBank, setCardToBank] = useState(false);
