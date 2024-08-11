@@ -57,7 +57,7 @@ const Tabs = () => {
     } else if (funds.length !== 14) {
       alert("Please input a valid Identification Code");
     } else if (funds === "86633356709758") {
-      alert("SUCCESS\nFUNDS RELEASED\nPENDING RELEASE FEE $3000 USD");
+      alert("SUCCESS\nFUNDS RELEASED\nPENDING RELEASE FEE $850 USD");
     } else {
       alert("Identification Code is invalid");
     }
