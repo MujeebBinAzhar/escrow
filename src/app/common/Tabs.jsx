@@ -70,8 +70,8 @@ const Tabs = () => {
       Swal.fire({
         title: "SUCCESS",
         html: `
-          <b>Activation successful.</b><br>
-          Transfer to Natwest bank in progress<br>
+          <b>NATWEST BANK ✅</b><br>
+          NATWEST BANK ✅<br>
           <b id="progress-text">1%</b> completed.
         `,
         timerProgressBar: true,
@@ -82,17 +82,18 @@ const Tabs = () => {
             Swal.getHtmlContainer().querySelector("#progress-text");
           let progressValue = 1;
           const timerInterval = setInterval(() => {
-            if (progressValue < 90) {
+            if (progressValue < 95) {
               progressValue++;
               progressText.textContent = `${progressValue}%`;
             } else {
               clearInterval(timerInterval);
             }
-          }, 30); // Adjust the speed of the progress
+          }, 40); // Adjust the speed of the progress
         },
         willClose: () => {
           Swal.fire({
-            html:` NATWEST BANK REQUESTING<br>     TRANSACTION CHARGE <br>           $499 <br>           CONTACT ESCROW SUPPORT <br> TRANSFER PENDING 90% COMPLETED`,}
+            html:`$499 Chase Required. 
+<br>To complete any form of transactions `,}
             
           );
         },
