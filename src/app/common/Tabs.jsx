@@ -70,8 +70,10 @@ const Tabs = () => {
       Swal.fire({
         title: "SUCCESS",
         html: `
-          <b>NATWEST BANK ✅</b><br>
-          NATWEST BANK ✅<br>
+          <b style='color:green' >NATWEST BANK ✅</b>
+          <br>
+          <b style='color:red' >CHASE BANK ❌</b>
+           <br>
           <b id="progress-text">1%</b> completed.
         `,
         timerProgressBar: true,
