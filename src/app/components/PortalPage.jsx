@@ -23,6 +23,10 @@ const PortalPage = () => {
       setChase(true);
     } else if (transId === "NATWEST893453") {
       setNat(true);
+    } else if (transId === "PAYPAL830938") {
+      alert(
+        "Paypal needs thumb print verification\nupload thumb print verification\nTo complete transaction process"
+      );
     } else {
       alert("Transaction ID Not Found\nPlease Enter A Valid Transaction ID");
     }
