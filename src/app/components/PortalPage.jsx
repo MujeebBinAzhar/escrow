@@ -103,7 +103,7 @@ const PortalPage = () => {
                 </p>
                 <div className="progresss-bar">
                   <div className="progresss-bar-inner">
-                    <span>45%</span>
+                    <span>57%</span>
                   </div>
                 </div>
               </div>
@@ -186,7 +186,7 @@ const PortalPage = () => {
                 </p>
                 <div className="progresss-bar">
                   <div className="progresss-bar-inner">
-                    <span>45%</span>
+                    <span>57%</span>
                   </div>
                 </div>
               </div>
