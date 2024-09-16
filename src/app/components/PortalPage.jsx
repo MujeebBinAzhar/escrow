@@ -43,12 +43,24 @@ const PortalPage = () => {
             </div>
 
             <div className="trans-content p-3">
-              <p>
-                Beneficiary First Name: <span>Lewis</span>{" "}
-              </p>
-              <p>
-                Beneficiary Last Name: <span>Clark</span>{" "}
-              </p>
+              <div
+                className="top-card
+              "
+              >
+                <div>
+                  <p>
+                    Beneficiary First Name: <span>Lewis</span>{" "}
+                  </p>
+                  <p>
+                    Beneficiary Last Name: <span>Clark</span>{" "}
+                  </p>
+                </div>
+
+                <div className="user-img">
+                  <img src="/user.png" className="img-fluid" alt="" />
+                </div>
+              </div>
+
               <p>
                 Country Of Origin: <span>United States Of America</span>{" "}
               </p>
@@ -63,20 +75,28 @@ const PortalPage = () => {
                 Senders Of Funds:{" "}
                 <span>Escrow International Accounts ( NEST BANK POLSKA)</span>
               </p>
-              <p>Beneficiary Bank: </p>
 
-              <div className="bank-img">
-                <img
-                  src="/chase.jpeg"
-                  className="img-fluid border-radius"
-                  alt=""
-                />
+              <div className="d-flex align-items-center my-4">
+                <p className="m-0 me-3">Beneficiary Bank: </p>
+
+                <div className="bank-img">
+                  <img
+                    src="/chase.jpeg"
+                    className="img-fluid border-radius"
+                    alt=""
+                  />
+                </div>
               </div>
 
-              {/* image */}
-
               <div className="d-flex align-items-center">
-                <p className="mb-0 me-3 ">Transaction Signal: </p>
+                <p
+                  className="mb-0 me-3 "
+                  style={{
+                    minWidth: "150px",
+                  }}
+                >
+                  Transaction Signal:{" "}
+                </p>
                 <div className="progresss-bar">
                   <div className="progresss-bar-inner">
                     <span>45%</span>
@@ -106,12 +126,24 @@ const PortalPage = () => {
             </div>
 
             <div className="trans-content p-3">
-              <p>
-                Beneficiary First Name: <span>Lewis</span>{" "}
-              </p>
-              <p>
-                Beneficiary Last Name: <span>Clark</span>{" "}
-              </p>
+              <div
+                className="top-card
+             "
+              >
+                <div>
+                  <p>
+                    Beneficiary First Name: <span>Lewis</span>{" "}
+                  </p>
+                  <p>
+                    Beneficiary Last Name: <span>Clark</span>{" "}
+                  </p>
+                </div>
+
+                <div className="user-img">
+                  <img src="/user.png" className="img-fluid" alt="" />
+                </div>
+              </div>
+
               <p>
                 Country Of Origin: <span>United States Of America</span>{" "}
               </p>
@@ -126,20 +158,28 @@ const PortalPage = () => {
                 Senders Of Funds:{" "}
                 <span>Escrow International Accounts ( NEST BANK POLSKA)</span>
               </p>
-              <p>Beneficiary Bank: </p>
 
-              <div className="bank-img">
-                <img
-                  src="/nat.jpeg"
-                  className="img-fluid border-radius"
-                  alt=""
-                />
+              <div className="d-flex align-items-center my-4">
+                <p className="m-0 me-3">Beneficiary Bank: </p>
+
+                <div className="bank-img">
+                  <img
+                    src="/nat.jpeg"
+                    className="img-fluid border-radius"
+                    alt=""
+                  />
+                </div>
               </div>
 
-              {/* image */}
-
               <div className="d-flex align-items-center">
-                <p className="mb-0 me-3 ">Transaction Signal: </p>
+                <p
+                  className="mb-0 me-3 "
+                  style={{
+                    minWidth: "150px",
+                  }}
+                >
+                  Transaction Signal:{" "}
+                </p>
                 <div className="progresss-bar">
                   <div className="progresss-bar-inner">
                     <span>45%</span>

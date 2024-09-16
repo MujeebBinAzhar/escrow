@@ -697,7 +697,7 @@ body {
   }
 }
 
-.pendind {
+.pending {
 }
 .card-model{
   position: fixed;
@@ -793,12 +793,18 @@ body {
   justify-content: center;
   align-items: center;
   .trans-modal-inner{
-    background-color: #fff;
- 
+    background-color: #fff; 
     border-radius: 0.4rem;
-    width: 1000px;
+    width: 750px;
     height: 80vh;
     overflow-y: scroll;
+
+
+    // make custom scroll bar
+    
+
+
+
     @media all and (max-width:768px){
       width: 98%;
     }
@@ -816,6 +822,16 @@ body {
       }
     }
     }
+
+    ::-webkit-scrollbar {
+      width: 10px !important;
+      background-color: #0e023b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #1A046F;
+       
+    }
+    
 }
 
 .progresss-bar{
@@ -877,10 +893,36 @@ body {
   p{
     span{
       color: #10237c;
+      font-weight: bold;
     }
   }
 }
 
 .cursor-pointer{
   cursor: pointer;
+}
+
+.user-img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-left: 4rem;
+  border: 4px solid #1a046f;
+  overflow: hidden;
+
+}
+
+.top-card{
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #b3b3b3;
+  padding-bottom: 1rem;
+  justify-content: space-between;
+  p{
+    margin: 0;
+    margin: 0.4rem 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
 }
