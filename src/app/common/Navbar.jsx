@@ -1,11 +1,8 @@
 import React from "react";
 import styles from "./navbar.module.scss";
 import Link from "next/link";
- 
 
 const Navbar = () => {
-
-
   return (
     <>
       <div className={styles.navbar}>
@@ -17,12 +14,22 @@ const Navbar = () => {
               </Link>
             </div>
             <div className={styles.navbar__content__right}>
-            <Link className="me-3" href="/about"> About </Link>
-            <Link className="me-3" href="/visa-debit"> <img src="visa.png" className="nav-visa"  alt="visacard" /> Visa Debit </Link>
-            <Link className="ms-3" href="/login"> Login </Link>
-       
+              <Link className="me-3" href="/about">
+                About
+              </Link>
 
-             
+              <Link className="me-3" href="/visa-debit">
+                <img src="visa.png" className="nav-visa" alt="visacard" /> Visa
+                Debit
+              </Link>
+
+              <Link className="ms-1" href="/portal">
+                Portal
+              </Link>
+
+              <Link className="ms-3" href="/login">
+                Login
+              </Link>
             </div>
           </div>
         </div>
