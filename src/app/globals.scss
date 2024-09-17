@@ -372,19 +372,17 @@ body {
   background-color: transparent;
 }
 
-.dollar{
-  
+.dollar {
   position: relative;
-  .custom-field{
+  .custom-field {
     padding-left: 1.3rem;
   }
 
-  &::before{
+  &::before {
     content: "$";
     position: absolute;
     left: 0.5rem;
     top: 28px;
-     
   }
 }
 
@@ -432,7 +430,7 @@ body {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 1rem;
   border-radius: 0.4rem;
-  
+
   button {
     background-color: #10237c;
     width: 100%;
@@ -500,7 +498,7 @@ body {
   }
 }
 
-.transer-card{
+.transer-card {
   background-color: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 0.6rem;
@@ -508,7 +506,7 @@ body {
   margin-bottom: 2rem;
 }
 
-.transfer-btn{
+.transfer-btn {
   display: block;
   width: 100%;
   margin: 0.7rem 0;
@@ -520,44 +518,41 @@ body {
   align-items: center;
   text-align: left;
   border-radius: 0.5rem;
-  .graphic{
-   display: flex;
-    img{
+  .graphic {
+    display: flex;
+    img {
       max-width: 28px;
       margin: 0 0.4rem;
     }
-    .card-img{
+    .card-img {
       max-width: 35px;
     }
-    .western{
+    .western {
       max-width: 120px;
     }
 
-    @media all and (max-width:768px){
+    @media all and (max-width: 768px) {
       flex-direction: column;
-      img{
+      img {
         max-width: 20px;
         margin: 0.2rem 0rem;
       }
-      .card-img{
+      .card-img {
         max-width: 22px;
-
       }
-      .arrow{
+      .arrow {
         rotate: 90deg;
       }
-      .western{
+      .western {
         max-width: 80px;
       }
     }
   }
 }
 
-
-
 .region {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 1rem; 
+  padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 0.4rem;
   h4 {
@@ -699,7 +694,7 @@ body {
 
 .pending {
 }
-.card-model{
+.card-model {
   position: fixed;
   z-index: 9999;
   background-color: rgba(0, 0, 0, 0.8);
@@ -711,34 +706,32 @@ body {
   justify-content: center;
   align-items: center;
 
-  .model-inner{
+  .model-inner {
     background-color: #fff;
     width: 500px;
     padding: 1rem;
     border-radius: 0.4rem;
-
   }
 
-  @media all and (max-width:768px){
-    .model-inner{
-     min-width: 98%;
-     height: 95vh;
-     overflow-y: scroll;
+  @media all and (max-width: 768px) {
+    .model-inner {
+      min-width: 98%;
+      height: 95vh;
+      overflow-y: scroll;
     }
   }
 }
-.cardpay-form{
-  @media all and (max-width:768px){
-    
+.cardpay-form {
+  @media all and (max-width: 768px) {
   }
-  .field-container{
+  .field-container {
     margin-bottom: 0.8rem;
-    input{
+    input {
       padding: 0.3rem 1rem;
     }
   }
 }
-.scammer{
+.scammer {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -746,31 +739,34 @@ body {
   align-items: center;
 }
 
-
-.portal-banner{
-  background-image: linear-gradient(180deg,rgba(0,43,73,0.5),rgba(0,43,73,0.8) ), url("/cards-bg.png");
+.portal-banner {
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 43, 73, 0.5),
+      rgba(0, 43, 73, 0.8)
+    ),
+    url("/cards-bg.png");
   min-height: 50vh;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-.banner-heading-two{
+.banner-heading-two {
   font-size: 5rem;
   color: #fff;
   font-weight: bold;
 
-  span{
+  span {
     color: #1bd220;
   }
-  @media all and (max-width:768px){
+  @media all and (max-width: 768px) {
     font-size: 2rem;
   }
 }
 
-.check-btn{
+.check-btn {
   width: 100%;
   background-color: #1a046f;
   color: #fff;
@@ -782,93 +778,83 @@ body {
   text-transform: uppercase;
 }
 
-.trans-modal{
+.trans-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  .trans-modal-inner{
-    background-color: #fff; 
+  .trans-modal-inner {
+    background-color: #fff;
     border-radius: 0.4rem;
     width: 750px;
     height: 80vh;
     overflow-y: scroll;
 
-
     // make custom scroll bar
-    
 
-
-
-    @media all and (max-width:768px){
+    @media all and (max-width: 768px) {
       width: 98%;
     }
 
-
-    .close{
+    .close {
       background-color: #1a046f;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem;
-      h4{
+      h4 {
         margin: 0;
         color: #fff;
       }
     }
-    }
+  }
 
-    ::-webkit-scrollbar {
-      width: 10px !important;
-      background-color: #0e023b;
-    }
-    ::-webkit-scrollbar-thumb {
-      background-color: #1A046F;
-       
-    }
-    
+  ::-webkit-scrollbar {
+    width: 10px !important;
+    background-color: #0e023b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #1a046f;
+  }
 }
 
-.progresss-bar{
+.progresss-bar {
   width: 100%;
   background-color: #b3b3b3;
   height: 0.5rem;
   border-radius: 0.4rem;
   max-width: 600px;
-  .progresss-bar-inner{
-    width: 57%;
+  .progresss-bar-inner {
+    width: 77%;
     height: 0.5rem;
     background-color: #1a046f;
     border-radius: 0.4rem;
     position: relative;
-    span{
+    span {
       position: absolute;
       right: -3rem;
       top: -8px;
       font-weight: bold;
       color: #10237c;
     }
-
-    
   }
-
 }
-.bank-img{
+.bank-img {
   border: 2px solid #1a046f;
   width: fit-content;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
-  img{
+  img {
     max-width: 400px;
   }
 }
 
-.timer{
+.timer {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
@@ -877,49 +863,47 @@ body {
   padding: 1rem;
   border-radius: 0.4rem;
   margin-bottom: 1rem;
-  h4{
+  h4 {
     margin: 0;
     font-size: 1.5rem;
     font-weight: bold;
-
   }
-  span{
+  span {
     font-size: 1.5rem;
     font-weight: bold;
   }
 }
 
-.trans-content{
-  p{
-    span{
+.trans-content {
+  p {
+    span {
       color: #10237c;
       font-weight: bold;
     }
   }
 }
 
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
 }
 
-.user-img{
+.user-img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   margin-left: 4rem;
   border: 4px solid #1a046f;
   overflow: hidden;
-
 }
 
-.top-card{
+.top-card {
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
   border-bottom: 2px solid #b3b3b3;
   padding-bottom: 1rem;
   justify-content: space-between;
-  p{
+  p {
     margin: 0;
     margin: 0.4rem 0;
     font-size: 1.3rem;
